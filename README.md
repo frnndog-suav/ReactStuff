@@ -30,6 +30,22 @@ This repository will store important notes and projects developed with React tec
 >```
  - The component name must begin with uppercase letter so it is possible to differentiate for instance that `<myButton />` is a web-component and `<MyButton />` is a component.
  - **JSX** is a way to "write HTML code on JS". The component is transformed into a "React element" and then transformed into a HTML.
+>*another_component.tsx*
+>```typescript
+>import  React  from  "react";
+>import  Component from  "../Component"; // example importing another component
+>class  Formulario  extends  React.Component {
+>   render(): React.ReactNode {
+>      return (
+>         <form>
+>            ...
+>            <Component />
+>         </form>
+>      )
+>   }
+>}
+>```
+
 
 ## Commands
 
