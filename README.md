@@ -1,7 +1,7 @@
 # React stuff here.
 This repository will store important notes and projects developed with React technology for frnndog-suav interest.
 ## Important observations:
-- After you created your project, delete the following files:
+ - After you created your project, delete the following files:
 	- `App.css`
 	- `App.test.tsx`
 	- `logo.svg`
@@ -28,7 +28,8 @@ This repository will store important notes and projects developed with React tec
 >   );
 >}
 >```
-
+ - The component name must begin with uppercase letter so it is possible to differentiate for instance that `<myButton />` is a web-component and `<MyButton />` is a component.
+ - **JSX** is a way to "write HTML code on JS". The component is transformed into a "React element" and then transformed into a HTML.
 
 ## Commands
 
