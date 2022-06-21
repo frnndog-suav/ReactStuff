@@ -7,7 +7,7 @@ This repository will store important notes and projects developed with React tec
 	- `logo.svg`
 	- `reportWebVitals.ts`
 	- `setupTeste.ts`
-### **Creating a component**
+### **Creating a component (Class component)**
 >*some_component.tsx*
 >```typescript
 >import  React  from  "react";
@@ -45,7 +45,16 @@ This repository will store important notes and projects developed with React tec
 >   }
 >}
 >```
-
+### **Creating a component (Function component)**
+>*some_component.tsx*
+>```typescript
+>function  NewComponent() {
+>   return (
+>   ...
+>   )
+>}
+>export  default  NewComponent;
+>```
 
 ## Commands
 
