@@ -142,6 +142,25 @@ This repository will store important notes and projects developed with React tec
 >   )
 >}
 >```
+### Styling override solving [(CSS Modules)](https://www.npmjs.com/package/typescript-plugin-css-modules)
+ - Add "module" to your styling file name (e.g.,`style.scss` to `style.module.scss`)
+ - Change the importing syntax (e.g., `import  style  from  "./style.module.scss";`)
+>*style.module.scss*
+>```css
+>exampleStyle {
+>   color: red;
+>}
+>```
+>*some_component.tsx*
+>```typescript
+>import style from "./style.module.scss";
+>function SomeComponent() {
+>   return (
+>      <div className={style.exampleStyle}>
+>   );
+>}
+>```
+
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
