@@ -88,8 +88,42 @@ This repository will store important notes and projects developed with React tec
 >}
 >export  default  Lista;
 >```
-
-
+### Adding style (CSS)
+>Basic inline styling example
+>```typescript
+>import  React  from  "react";
+>class  Botao  extends  React.Component {
+>   render(): React.ReactNode {
+>      return  <button style={{backgroundColor: 'green'}}>Eu sou um botão</button>;
+>   }
+>}
+>export  default  Botao;
+>```
+>Basic inline styling example (variable)
+>```typescript
+>import  React  from  "react";
+>class  Botao  extends  React.Component {
+>   render(): React.ReactNode {
+>      const  testingColor = 'red'  
+>      return  <button style={{backgroundColor: testingColor}}>Eu sou um botão</button>;
+>   }
+>}
+>export  default  Botao;
+>```
+>Basic inline styling example (object variable)
+>```typescript
+>import  React  from  "react";
+>class  Botao  extends  React.Component {
+>   render(): React.ReactNode {
+>      const  active = false
+>      const  style = {
+>         backgroundColor: active? "green" : "yellow"
+>      }
+>      return  <button style={style}>Eu sou um botão</button>;
+>   }
+>}
+>export  default  Botao;
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
