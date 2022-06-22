@@ -124,6 +124,24 @@ This repository will store important notes and projects developed with React tec
 >}
 >export  default  Botao;
 >```
+### Adding style (Sass)
+ - Installing Sass: `npm install --save-dev sass`
+>*style.scss*
+>```css
+>h2 {
+>   color: red;
+>}
+>```
+>*some_component.tsx*
+>```typescript
+>import  "./style.scss";
+>function  FunctionComponent() {
+>   ...
+>   return(
+>      <h2>Hello World</h2>
+>   )
+>}
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
