@@ -11,12 +11,11 @@ This repository will store important notes and projects developed with React tec
 >*some_component.tsx*
 >```typescript
 >import  React  from  "react";
->class  Botao  extends  React.Component {
+>export default class Botao extends React.Component {
 >   render(): React.ReactNode {
 >      return  <button>Eu sou um botão</button>;
 >   }
 >}
->export  default  Botao;
 >```
 >*App.tsx*
 >```typescript
@@ -48,17 +47,16 @@ This repository will store important notes and projects developed with React tec
 ### **Creating a component (Function component)**
 >*some_component.tsx*
 >```typescript
->function  NewComponent() {
+>export default function NewComponent() {
 >   return (
 >   ...
 >   )
 >}
->export  default  NewComponent;
 >```
 ### JSX example (Map)
 >*some_component.tsx*
 >```typescript
->function  NewComponent() {
+>export default function  NewComponent() {
 >   const  tarefas = [
 >   {
 >      tarefa:  "React",
@@ -86,34 +84,31 @@ This repository will store important notes and projects developed with React tec
 >      </aside>
 >   )
 >}
->export  default  Lista;
 >```
 ### Adding style (CSS)
 >Basic inline styling example
 >```typescript
 >import  React  from  "react";
->class  Botao  extends  React.Component {
+>export default class Botao extends React.Component {
 >   render(): React.ReactNode {
 >      return  <button style={{backgroundColor: 'green'}}>Eu sou um botão</button>;
 >   }
 >}
->export  default  Botao;
 >```
 >Basic inline styling example (variable)
 >```typescript
 >import  React  from  "react";
->class  Botao  extends  React.Component {
+>export default class Botao extends React.Component {
 >   render(): React.ReactNode {
 >      const  testingColor = 'red'  
 >      return  <button style={{backgroundColor: testingColor}}>Eu sou um botão</button>;
 >   }
 >}
->export  default  Botao;
 >```
 >Basic inline styling example (object variable)
 >```typescript
 >import  React  from  "react";
->class  Botao  extends  React.Component {
+>export default class Botao extends React.Component {
 >   render(): React.ReactNode {
 >      const  active = false
 >      const  style = {
@@ -122,7 +117,6 @@ This repository will store important notes and projects developed with React tec
 >      return  <button style={style}>Eu sou um botão</button>;
 >   }
 >}
->export  default  Botao;
 >```
 ### Adding style (Sass)
  - Installing Sass: `npm install --save-dev sass`
@@ -163,12 +157,11 @@ This repository will store important notes and projects developed with React tec
 ### Props (Attribute)
 >*some_component.tsx*
 >```typescript
->class Botao extends React.Component<{texto: string}> {
+>export default class Botao extends React.Component<{texto: string}> {
 >   render(): React.ReactNode {
 >      return  <button>{this.props.texto}</button>;
 >   }
 >}
->export default Botao
 >```
 >*another_component.tsx*
 >```html
@@ -176,10 +169,21 @@ This repository will store important notes and projects developed with React tec
 ><Botao texto="Seu texto aqui" />
 >...
 >```
+>*more_props_component.tsx*
+>```typescript
+>export default function Item({tarefa,tempo}: {tarefa: string; tempo: string;}) {
+>   return (
+>      <li>
+>         <h3>{tarefa}</h3>
+>         <span>{tempo}</span>
+>      </li>
+>   )
+>}
+>```
 ### Props (Children)
 >*some_component.tsx*
 >```typescript
->class Botao extends React.Component<{
+>export class Botao extends React.Component<{
 >   children?: React.ReactNode;
 >   }> {
 >      render(): React.ReactNode {
