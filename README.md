@@ -86,7 +86,7 @@ This repository will store important notes and projects developed with React tec
 >}
 >```
 ### Adding style (CSS)
->Basic inline styling example
+>Basic inline styling example.
 >```typescript
 >import  React  from  "react";
 >export default class Botao extends React.Component {
@@ -95,7 +95,7 @@ This repository will store important notes and projects developed with React tec
 >   }
 >}
 >```
->Basic inline styling example (variable)
+>Basic inline styling example (variable).
 >```typescript
 >import  React  from  "react";
 >export default class Botao extends React.Component {
@@ -105,7 +105,7 @@ This repository will store important notes and projects developed with React tec
 >   }
 >}
 >```
->Basic inline styling example (object variable)
+>Basic inline styling example (object variable).
 >```typescript
 >import  React  from  "react";
 >export default class Botao extends React.Component {
@@ -137,8 +137,8 @@ This repository will store important notes and projects developed with React tec
 >}
 >```
 ### Styling override solving [(CSS Modules)](https://www.npmjs.com/package/typescript-plugin-css-modules)
- - Add "module" to your styling file name (e.g.,`style.scss` to `style.module.scss`)
- - Change the importing syntax (e.g., `import  style  from  "./style.module.scss";`)
+ - Add "module" to your styling file name (e.g.,`style.scss` to `style.module.scss`).
+ - Change the importing syntax (e.g., `import  style  from  "./style.module.scss";`).
 >*style.module.scss*
 >```css
 >exampleStyle {
@@ -219,8 +219,53 @@ This repository will store important notes and projects developed with React tec
 >   );
 >}
 >```
-
-
+### State (Class Component)
+>Example.
+>```typescript
+>export default class SomeComponent extends React.Component {
+>   state = {
+>      tarefa:  "",
+>      tempo:  "00:00"
+>   }
+>  
+>   adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+>      evento.preventDefault();
+>      console.log("state: ", this.state);
+>      ...
+>   }
+>  
+>   render(): React.ReactNode {
+>      ...
+>      <form  className={style.novaTarefa}  onSubmit={this.adicionarTarefa.bind(this)}> //scope association
+>      ...
+>      <input
+>      ...
+>      value={this.state.tarefa}
+>      onChange={(evento) => {
+>         this.setState({ ...this.state, tarefa:  evento.target.value }); 
+>      }}
+>      ...
+>      />
+>   }
+>}
+>```
+### State (Function Component)
+>Example of adding a object to a list.
+>```typescript
+>export default function SomeComponent() {
+>   const [varName, changeStateFunction] = useState([
+>      {
+>         property: "Default value",
+>      },
+>      ...
+>   ])
+>   return (
+>      ...
+>      <h1 onClick()={() => {changeStateFunction([...tarefas, {property: "New object"}])}}></h1>
+>      ...
+>   )
+>}
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
