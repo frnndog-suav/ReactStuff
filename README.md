@@ -242,7 +242,6 @@ This repository will store important notes and projects developed with React tec
 >      ...
 >      value={this.state.tarefa}
 >      onChange={(evento) => {
->         //...this.state => get object properties      tarefa: evento.target.value => which property you wanna change
 >         this.setState({ ...this.state, tarefa:  evento.target.value }); 
 >      }}
 >      ...
