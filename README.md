@@ -197,6 +197,29 @@ This repository will store important notes and projects developed with React tec
 ><Botao>Seu Texto Aqui</Botao>
 >...
 >```
+### React.Fragment
+>JSX expressions must have one parent element.
+>*some_component.tsx*
+>```typescript
+>export default function SomeComponent() {
+>   return (
+>      <React.Fragment>
+>      ...
+>      </React.Fragment>
+>   );
+>}
+>```
+>**or**
+>```typescript
+>export default function SomeComponent() {
+>   return (
+>      <>
+>      ...
+>      </>
+>   );
+>}
+>```
+
 
 ## Commands
 
