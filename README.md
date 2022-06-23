@@ -160,6 +160,39 @@ This repository will store important notes and projects developed with React tec
 >   );
 >}
 >```
+### Props (Attribute)
+>*some_component.tsx*
+>```typescript
+>class Botao extends React.Component<{texto: string}> {
+>   render(): React.ReactNode {
+>      return  <button>{this.props.texto}</button>;
+>   }
+>}
+>export default Botao
+>```
+>*another_component.tsx*
+>```html
+>...
+><Botao texto="Seu texto aqui" />
+>...
+>```
+### Props (Children)
+>*some_component.tsx*
+>```typescript
+>class Botao extends React.Component<{
+>   children?: React.ReactNode;
+>   }> {
+>      render(): React.ReactNode {
+>         return  <button>{this.props.children}</button>;
+>      }
+>}
+>```
+>*another_component.tsx*
+>```html
+>...
+><Botao>Seu Texto Aqui</Botao>
+>...
+>```
 
 ## Commands
 
