@@ -219,8 +219,23 @@ This repository will store important notes and projects developed with React tec
 >   );
 >}
 >```
-
-
+### State
+>Example of adding a object to a list
+>```typescript
+>export default function SomeComponent() {
+>   const [varName, changeStateFunction] = useState([
+>      {
+>         property: "Default value",
+>      },
+>      ...
+>   ])
+>   return (
+>      ...
+>      <h1 onClick()={() => {changeStateFunction([...tarefas, {property: "New object"}])}}></h1>
+>      ...
+>   )
+>}
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
