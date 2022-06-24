@@ -266,6 +266,34 @@ This repository will store important notes and projects developed with React tec
 >   )
 >}
 >```
+### Functions as parameter
+>```typescript
+>interface  Props{
+>   ...
+>   functionNameHere: (parameterNameHere: ObjectTypeHere) =>  void;  //no return
+>   ...
+>}
+>```
+### Extend interfaces
+>```typescript
+>interface Obj1{
+>   property1: boolean,
+>   property2: string
+>}
+> 
+>interface Obj2 extends Obj1{
+>   property3: number,
+>   property4: any
+>}
+> 
+>//Obj2 is equal to the code below:
+>interface FinalObj{
+>   property1: boolean,
+>   property2: string,
+>   property3: number,
+>   property4: any
+>}
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
