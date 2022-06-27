@@ -1,12 +1,7 @@
 # React stuff here.
 This repository will store important notes and projects developed with React technology for frnndog-suav interest.
 ## Important observations
- - After you created your project, delete the following files:
-	- `App.css`
-	- `App.test.tsx`
-	- `logo.svg`
-	- `reportWebVitals.ts`
-	- `setupTeste.ts`
+ - To use CSS modules with Sass, execute the command `npm install -D typescript-plugin-css-modules sass`. For more information, [click here](https://www.npmjs.com/package/typescript-plugin-css-modules).
 ### **Creating a component (Class component)**
 >*some_component.tsx*
 >```typescript
@@ -312,7 +307,28 @@ General life cycle:
  - **componentDidMount** (component has just been mounted): the same as `useEffect(()=>{...},[])`, it is usually used to make calls to the server or to manipulate props.
  - **componentWillUpdate** (component has just been updated):  the same as `useEffect(()=>{...},[variable])`, it is executed everytime the variable(s) passed in the array change.
  - **componentWillUnmount** (component will be unmounted): the same as `useEffect(()=>{return()=>{...}}, [])`, the function inside the `return` will only be executed when the component is unmounting. Usually used to `clearTimeout` and `clearInterval`.
-
+### Importing static files
+>```typescript
+>import logo from  "../../assets/img/logo.svg";
+>export default function SomeComponent() {
+>   return (
+>      ...
+>      <img src={logo} alt="Some text"/>
+>      ...
+>   );
+>}
+>```
+>or
+>```typescript
+>import {ReactComponent  as  Logo} from  "../../assets/img/logo.svg";
+>export default function SomeComponent() {
+>   return (
+>      ...
+>      <Logo />
+>      ...
+>   );
+>}
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
