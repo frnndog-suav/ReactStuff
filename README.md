@@ -303,10 +303,9 @@ This repository will store important notes and projects developed with React tec
 >```typescript
 >(condition) && "true result"
 >```
-### useEffect (Hook)
-It is like an observable. //look for better description
+### Learn hooks [here](https://www.alura.com.br/artigos/react-hooks).
 
-### Life cycle
+### Life cycle 
 **mount** is component creation and **unmount** is component desctruction.
 General life cycle:
  - **componentWillMount** (before component is mounted): the same as `useLayoutEffect(()=>{...},[])`, it is used to change something visually before the component show up (e.g. light/dark theme changing)
