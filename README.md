@@ -294,7 +294,28 @@ This repository will store important notes and projects developed with React tec
 >   property4: any
 >}
 >```
+### Ternaries
+>Standard ternary
+>```typescript
+>(condition) ? "true result" : "false result"
+>```
+>Ternary without else (:)
+>```typescript
+>(condition) && "true result"
+>```
+### useEffect (Hook)
+It is like an observable. //look for better description
+
+### Life cycle
+**mount** is component creation and **unmount** is component desctruction.
+General life cycle:
+ - **componentWillMount** (before component is mounted): the same as `useLayoutEffect(()=>{...},[])`, it is used to change something visually before the component show up (e.g. light/dark theme changing)
+ - **componentDidMount** (component has just been mounted): the same as `useEffect(()=>{...},[])`, it is usually used to make calls to the server or to manipulate props.
+ - **componentWillUpdate** (component has just been updated):  the same as `useEffect(()=>{...},[variable])`, it is executed everytime the variable(s) passed in the array change.
+ - **componentWillUnmount** (component will be unmounted): the same as `useEffect(()=>{return()=>{...}}, [])`, the function inside the `return` will only be executed when the component is unmounting. Usually used to `clearTimeout` and `clearInterval`.
+
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
  - `npm start` -> run project.
+ 
