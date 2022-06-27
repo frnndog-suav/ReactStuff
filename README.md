@@ -329,6 +329,16 @@ General life cycle:
 >   );
 >}
 >```
+### Global importing
+>```json
+>"compilerOptions": {
+>   ...
+>   "baseUrl": "src"
+>   ...
+>}
+>```
+>Instead of using `import something from "../../../someFolder/someFile";`, you can use `import something from "someFolder/someFile` for instance.
+
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
