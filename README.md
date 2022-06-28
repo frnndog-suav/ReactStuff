@@ -2,6 +2,7 @@
 This repository will store important notes and projects developed with React technology for frnndog-suav interest.
 ## Important observations
  - To use CSS modules with Sass, execute the command `npm install -D typescript-plugin-css-modules sass`. For more information, [click here](https://www.npmjs.com/package/typescript-plugin-css-modules).
+ - [React Icons](https://react-icons.github.io/react-icons/).
 ### **Creating a component (Class component)**
 >*some_component.tsx*
 >```typescript
