@@ -338,7 +338,35 @@ General life cycle:
 >}
 >```
 >Instead of using `import something from "../../../someFolder/someFile";`, you can use `import something from "someFolder/someFile` for instance.
+### CSS Reset and Normalize
+**CSS Reset**
+Each browser has its presentation by default and this individualized behavior can generate layout conflicts in front of your web project. These inconsistencies that browsers present when displaying or rendering elements can be subtle or more apparent, such as, for instance, different measurements for the top and bottom margin in titles or the height of the default line, which can profoundly affect the heights of elements and alignments.
+The css reset technique is a way to smooth these differences and standardize the styling, overlaying the browsers' original formatting with a style sheet.
+**Normalize**
+The main purpose of Normalize is to make the default styling consistent between browsers. Some standard browser styles that are useful for page development are kept, some common bugs between browsers are fixed, some usability improvements and also all the Normalize code is commented and with a documentation about the modifications.
+>- Execute the following command: `npm install normalize.css`
+>- On the root `index.tsx`, before the `import  "./index.css"` importing, add the following import: `import  "normalize.css"`.
+>```typescript
+>...
+>import  "normalize.css";
+>import  "./index.css";
+>...
+>const  root = ReactDOM.createRoot(
+>   document.getElementById("root") as  HTMLElement
+>);
+>root.render(
+>   <React.StrictMode>
+>   ...
+>   </React.StrictMode>
+>);
+>```
+**CSS Reset** x **Normalize**
+- Reset CSS clears ALL browser defaults. It's a aggressive "cleaning", while Normalize still maintains defaults that are useful.
+- Normalize CSS fixes some bugs that exist in the default styling of browsers.
+- Normalize is modular. The entire code is separated by specific sections, so you can look for changes more directly.
+- Normalize is modular. The entire code is separated by specific sections, so you can look for changes more directly.
 
+More info right [here](https://www.alura.com.br/artigos/o-que-e-reset-css).
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
