@@ -368,6 +368,17 @@ The main purpose of Normalize is to make the default styling consistent between 
 - Normalize is modular. The entire code is separated by specific sections, so you can look for changes more directly.
 
 More info right [here](https://www.alura.com.br/artigos/o-que-e-reset-css).
+### Conditional className
+ - Execute the following command: `npm install classnames`
+>```typescript
+>import  classNames  from  "classnames";
+>...
+><button className={classNames({
+>   [styles.yourStyle]:  true,                          //default style
+>   [styles.conditionalStyle]: var1.id === var2.id,     //your condition here
+>   ...
+>})}></button>
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
