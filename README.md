@@ -381,6 +381,14 @@ More info right [here](https://www.alura.com.br/artigos/o-que-e-reset-css).
 >   ...
 >})}></button>
 >```
+### ESLint
+ESLint is a tool that analyzes code and points out any problems it finds. It can find bugs, potentially problem areas, bad coding styles, and style issues. 
+ - To start off, execute the following command: `npm init @eslint/config`.
+ - Answer the questions.
+ - `.eslintrc.json` file will be created.
+ - Add the statement `"react/react-in-jsx-scope": "off",` in rules section on `.eslintrc.json` file.
+ - Finally, execute `npx eslint ./src --fix` (the `./src` folder is the starting point where you want ESlint to start fixing your code).
+
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
