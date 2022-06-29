@@ -388,7 +388,37 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
  - `.eslintrc.json` file will be created.
  - Add the statement `"react/react-in-jsx-scope": "off",` in rules section on `.eslintrc.json` file.
  - Finally, execute `npx eslint ./src --fix` (the `./src` folder is the starting point where you want ESlint to start fixing your code).
-
+### Route
+ - Install the package using `npm i react-router-dom`.
+ - Create a `routes.js` file in the root folder.
+>*routes.js*
+>```typescript
+>import { BrowserRouter  as  Router, Routes, Route } from  "react-router-dom";
+>...
+>export  default  function  AppRouter() {
+>   return (
+>      <Router>
+>         <Routes>
+>            <Route path="/" element={<Inicio />}  />
+>            <Route path="/cardapio" element={<Cardapio />}  />
+>         </Routes>
+>      </Router>
+>   )
+>}
+>```
+>*index.js (root)*
+>```typescript
+>import  Router  from  "./routes";
+>...
+>const  root = ReactDOM.createRoot(
+>   document.getElementById("root") as HTMLElement
+>);
+>root.render(
+>   <React.StrictMode>
+>      <Router />
+>   </React.StrictMode>
+>);
+>```
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
