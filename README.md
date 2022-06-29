@@ -339,6 +339,8 @@ General life cycle:
 >}
 >```
 >Instead of using `import something from "../../../someFolder/someFile";`, you can use `import something from "someFolder/someFile` for instance.
+### Dynamic references (loading static files)
+Assuming that you want to load an image in your `<div>` tag, the image should be storage in the `public` folder. For instance, if your image path is `/assets/pratos/macarrao_mediterraneo.png`, then the image should be placed in `root/public/assets/pratos/macarrao_mediterraneo.png`.
 ### CSS Reset and Normalize
 **CSS Reset**
 Each browser has its presentation by default and this individualized behavior can generate layout conflicts in front of your web project. These inconsistencies that browsers present when displaying or rendering elements can be subtle or more apparent, such as, for instance, different measurements for the top and bottom margin in titles or the height of the default line, which can profoundly affect the heights of elements and alignments.
