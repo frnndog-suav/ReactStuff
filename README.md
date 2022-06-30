@@ -419,6 +419,23 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
 >   </React.StrictMode>
 >);
 >```
+### Link
+>```typescript
+>import { Link } from  "react-router-dom";
+>...
+><Link  to={"./yourMenuRouteHere"}>Menu</Link>
+>><Link  to={"./yourAboutRouteHere"}>About</Link>
+>```
+### Navigate (go back)
+>```typescript
+>import { useNavigate } from  "react-router-dom";
+>...
+>const  navigate = useNavigate();
+>...
+><button onClick={() => {navigate(-1);}}></button>
+>...
+>```
+
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
