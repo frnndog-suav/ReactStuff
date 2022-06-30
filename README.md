@@ -435,7 +435,20 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
 ><button onClick={() => {navigate(-1);}}></button>
 >...
 >```
-
+### useParams
+>*router.js*
+>```typescript
+>...
+><Route path="path/:varName"  element={<SomeElement/>}  />
+>...
+>```
+>*someElement.tsx*
+>```typescript
+>import { useParams } from  "react-router-dom";
+>...
+>const test = useParams();   //returns 'varName' with value from the path
+>```
+>
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
