@@ -1,9 +1,5 @@
 @import 'styles/variaveis';
-.titulo {
-  color: $dark;
-  font-size: 3rem;
-  margin-bottom: 30px;
-}
+
 .recomendados {
   border-radius: 2px;
   display: flex;
@@ -60,5 +56,6 @@
     left: 0;
     right: 0;
     width: 200px;
+    font-size: large;
   }
 }
