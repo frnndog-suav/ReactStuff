@@ -454,7 +454,12 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
 >...
 >const test = useParams();   //returns 'varName' with value from the path
 >```
->
+### State (useLocation)
+>```typescript
+>const { state } = useLocation();
+>const { prato } = state  as { prato: YourObject };
+>```
+
 ## Commands
 
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
