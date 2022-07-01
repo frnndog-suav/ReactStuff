@@ -435,6 +435,12 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
 ><button onClick={() => {navigate(-1);}}></button>
 >...
 >```
+### Navigate "state" param
+>```typescript
+>import { useNavigate } from  "react-router-dom";
+>...
+>navigate("path", {state: {...object}});
+>```
 ### useParams
 >*router.js*
 >```typescript
