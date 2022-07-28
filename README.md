@@ -1,3 +1,4 @@
+
 # React stuff here.
 This repository will store important notes and projects developed with React technology for frnndog-suav interest.
 ## Important observations
@@ -458,6 +459,37 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
 >```typescript
 >const { state } = useLocation();
 >const { prato } = state  as { prato: YourObject };
+>```
+### React Query
+ - Asynchronous state management for TS/JS.
+ - Install React Query by executing the following command: `npm install react-query`.
+  > *App.js*
+ >```typescript
+ >
+>```
+
+ > *something.js*
+ >```typescript
+ >import {useQuery} from "react-query"
+ >...
+ >const fetchSomething = async ()  => {
+ >   const response = await fetch("https://rickandmortyapi.com/api/character")
+ >   return response.json()
+ >}
+ >
+ >const {data, status} = useQuery("unique-key-name-here", fetchSomething)
+ >//First parameter: unique key used for things like caching
+ > //Second parameter: api fetch function
+ >  
+ >if(status === "loading"){
+ >   return <div>Loading...</div>
+ >}
+ > 
+ >if(status === "error"){
+ >   return <div>Error</div>
+ >}
+ > 
+ >return <div>Success</div>
 >```
 
 ## Commands
