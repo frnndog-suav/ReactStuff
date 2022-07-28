@@ -216,6 +216,14 @@ This repository will store important notes and projects developed with React tec
 >   );
 >}
 >```
+### useState 
+>```typescript
+>const [page, setPage] = useState(1)
+>...
+>   <button disabled={page === 1} onClick={() => setPage((oldValue) => oldValue - 1)}>
+>   </button>
+>...
+>```
 ### State (Class Component)
 >Example.
 >```typescript
@@ -465,27 +473,43 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
  - Install React Query by executing the following command: `npm install react-query`.
   > *App.js*
  >```typescript
- >
+ >import {QueryClientProvider, QueryClient} from "react-query"
+ > 
+ >const queryClient = new QueryClient()
+ > 
+ >function App(){
+ >   return (
+ >      <div className="App">
+ >         <QueryClientProvider client={queryClient}>
+ >            ...
+ >         </QueryClientProvider>
+ >      </div>
+ >   )
+ >}
 >```
 
  > *something.js*
  >```typescript
  >import {useQuery} from "react-query"
  >...
- >const fetchSomething = async ()  => {
- >   const response = await fetch("https://rickandmortyapi.com/api/character")
+ >const [page, setPage] = useState(1)
+ >
+ >const fetchSomething = async ({queryKey})  => {
+ >   const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`)
  >   return response.json()
  >}
  >
- >const {data, status} = useQuery("unique-key-name-here", fetchSomething)
+ >const {data, status, isPreviousData, isLoading, isError ... } = useQuery(["unique-key-name-here", page], fetchSomething, {
+ >   keepPreviousDate: true
+ >})
  >//First parameter: unique key used for things like caching
  > //Second parameter: api fetch function
  >  
- >if(status === "loading"){
+ >if(status === "loading"){     //You can also use 'if(isLoading)' if 'isLoading' is desconstructed in useQuery return
  >   return <div>Loading...</div>
  >}
  > 
- >if(status === "error"){
+ >if(status === "error"){      //You can also use 'if(isError)' if 'isError' is desconstructed in useQuery return
  >   return <div>Error</div>
  >}
  > 
@@ -493,7 +517,6 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
 >```
 
 ## Commands
-
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
  - `npm start` -> run project.
  
