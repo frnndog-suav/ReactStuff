@@ -515,6 +515,73 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
  > 
  >return <div>Success</div>
 >```
+### useContext
+ - Share data between components but not using it as a prop. 
+ >*exampleContext.js*
+ >```typescript
+ >import {createContext} from "react"
+ >export const ExampleContext = createContext()
+ >export const ExampleContextProvider({children}){
+ >   const [counter, setCounter] = useState(0)
+ >   const [doubleCounter, setDoubleCounter] = useState(0)
+ >    
+ >   function exampleFunction1(){
+ >      ...
+ >   }
+ >   
+ >   useEffect(()=>{
+ >      setDoubleCounter((oldValue) => oldValue + 1)
+ >   }, [counter])
+ >   
+ >   return(
+ >      <ExampleContext.Provider value={{counter, setCounter, doubleCounter, exampleFunction1}}>
+ >         {children}
+ >      </ExampleContext.Provider>
+ >   )
+ >}
+>```
+
+  >*App.js*
+ >```typescript
+ >function App() {
+ >   <ExampleContextProvider>
+ >      <ComponentA/>
+ >      <ComponentB/>
+ >      <ComponentC/>
+ >      ...
+ >   </ExampleContextProvider>
+ >}
+>```
+
+  >*ComponentA.js*
+ >```typescript
+ >import {useContext} from "react"
+ >import {ExampleContext} from "....."
+ >export function ComponentA() {
+ >   const {counter, setCounter} = useContext(ExampleContext)    
+ >   ...
+ >}
+>```
+
+ >*ComponentB.js*
+ >```typescript
+ >import {useContext} from "react"
+ >import {ExampleContext} from "....."
+ >export function ComponentB() {
+ >   const {counter} = useContext(ExampleContext)     
+ >   ...
+ >}
+>```
+
+ >*ComponentC.js*
+ >```typescript
+ >import {useContext} from "react"
+ >import {ExampleContext} from "....."
+ >export function ComponentC() {
+ >   const {exampleFunction1} = useContext(ExampleContext)     
+ >   ...
+ >}
+>```
 
 ## Commands
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
