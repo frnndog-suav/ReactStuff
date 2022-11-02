@@ -1,3 +1,4 @@
+
 # React stuff here.
 This repository will store important notes and projects developed with React technology for frnndog-suav interest.
 ## Important observations
@@ -214,6 +215,14 @@ This repository will store important notes and projects developed with React tec
 >      </>
 >   );
 >}
+>```
+### useState 
+>```typescript
+>const [page, setPage] = useState(1)
+>...
+>   <button disabled={page === 1} onClick={() => setPage((oldValue) => oldValue - 1)}>
+>   </button>
+>...
 >```
 ### State (Class Component)
 >Example.
@@ -459,9 +468,122 @@ ESLint is a tool that analyzes code and points out any problems it finds. It can
 >const { state } = useLocation();
 >const { prato } = state  as { prato: YourObject };
 >```
+### React Query
+ - Asynchronous state management for TS/JS.
+ - Install React Query by executing the following command: `npm install react-query`.
+  > *App.js*
+ >```typescript
+ >import {QueryClientProvider, QueryClient} from "react-query"
+ > 
+ >const queryClient = new QueryClient()
+ > 
+ >function App(){
+ >   return (
+ >      <div className="App">
+ >         <QueryClientProvider client={queryClient}>
+ >            ...
+ >         </QueryClientProvider>
+ >      </div>
+ >   )
+ >}
+>```
+
+ > *something.js*
+ >```typescript
+ >import {useQuery} from "react-query"
+ >...
+ >const [page, setPage] = useState(1)
+ >
+ >const fetchSomething = async ({queryKey})  => {
+ >   const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`)
+ >   return response.json()
+ >}
+ >
+ >const {data, status, isPreviousData, isLoading, isError ... } = useQuery(["unique-key-name-here", page], fetchSomething, {
+ >   keepPreviousDate: true
+ >})
+ >//First parameter: unique key used for things like caching
+ > //Second parameter: api fetch function
+ >  
+ >if(status === "loading"){     //You can also use 'if(isLoading)' if 'isLoading' is desconstructed in useQuery return
+ >   return <div>Loading...</div>
+ >}
+ > 
+ >if(status === "error"){      //You can also use 'if(isError)' if 'isError' is desconstructed in useQuery return
+ >   return <div>Error</div>
+ >}
+ > 
+ >return <div>Success</div>
+>```
+### useContext
+ - Share data between components but not using it as a prop. 
+ >*exampleContext.js*
+ >```typescript
+ >import {createContext} from "react"
+ >export const ExampleContext = createContext()
+ >export const ExampleContextProvider({children}){
+ >   const [counter, setCounter] = useState(0)
+ >   const [doubleCounter, setDoubleCounter] = useState(0)
+ >    
+ >   function exampleFunction1(){
+ >      ...
+ >   }
+ >   
+ >   useEffect(()=>{
+ >      setDoubleCounter((oldValue) => oldValue + 1)
+ >   }, [counter])
+ >   
+ >   return(
+ >      <ExampleContext.Provider value={{counter, setCounter, doubleCounter, exampleFunction1}}>
+ >         {children}
+ >      </ExampleContext.Provider>
+ >   )
+ >}
+>```
+
+  >*App.js*
+ >```typescript
+ >function App() {
+ >   <ExampleContextProvider>
+ >      <ComponentA/>
+ >      <ComponentB/>
+ >      <ComponentC/>
+ >      ...
+ >   </ExampleContextProvider>
+ >}
+>```
+
+  >*ComponentA.js*
+ >```typescript
+ >import {useContext} from "react"
+ >import {ExampleContext} from "....."
+ >export function ComponentA() {
+ >   const {counter, setCounter} = useContext(ExampleContext)    
+ >   ...
+ >}
+>```
+
+ >*ComponentB.js*
+ >```typescript
+ >import {useContext} from "react"
+ >import {ExampleContext} from "....."
+ >export function ComponentB() {
+ >   const {counter} = useContext(ExampleContext)     
+ >   ...
+ >}
+>```
+
+ >*ComponentC.js*
+ >```typescript
+ >import {useContext} from "react"
+ >import {ExampleContext} from "....."
+ >export function ComponentC() {
+ >   const {exampleFunction1} = useContext(ExampleContext)     
+ >   ...
+ >}
+>```
 
 ## Commands
-
  - `npx create-react-app your-directory-name --template typescript --use-npm your-app-name` -> create project.
  - `npm start` -> run project.
  
