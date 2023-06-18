@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
+import InfoIcon from "@mui/icons-material/Info";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const Register = () => {
   //User input - allows us to set the focus on
-  const userRef = useRef<HTMLInputElement>();
+  const userRef = useRef<HTMLInputElement>(null);
 
   //Set the focus on the erros message
-  const errRef = useRef();
+  const errRef = useRef<HTMLParagraphElement>(
+    null
+  ) as React.LegacyRef<HTMLParagraphElement>;
 
   //user input
   const [user, setUser] = useState("");
@@ -53,9 +56,49 @@ const Register = () => {
 
   useEffect(() => {
     setErrorMessage("");
-  }, []);
+  }, [user, password, matchPassword]);
 
-  return <div>Register</div>;
+  return (
+    <section>
+      <p
+        ref={errRef}
+        className={errorMessage ? "errmsg" : "offscreen"}
+        //tell that this text is showing (for assistive technologies)
+        aria-live="assertive">
+        {errorMessage}
+      </p>
+      <h1>Register</h1>
+      <form>
+        <label htmlFor="username">Username: </label>
+        <input
+          type="text"
+          //should match "htmlFor" property from "label"
+          id="username"
+          ref={userRef}
+          autoComplete="off"
+          required
+          //tells screen reader whether the value needs adjustment before the form is submitted
+          aria-invalid={validName ? "false" : "true"}
+          aria-describedby="uidnote"
+          onChange={(e) => setUser(e.target.value)}
+          onFocus={() => setUserFocus(true)}
+          onBlur={() => setUserFocus(false)}
+        />
+        <p
+          id="uidnote"
+          className={
+            userFocus && user && !validName ? "instructions" : "offscreen"
+          }>
+          <InfoIcon />
+          4 to 24 characters.
+          <br />
+          Must begin with a letter.
+          <br />
+          Letter, numbers, underscores, hyphens allowed.
+        </p>
+      </form>
+    </section>
+  );
 };
 
 export default Register;
