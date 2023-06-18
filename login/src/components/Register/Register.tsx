@@ -25,7 +25,7 @@ const Register = () => {
   //check whether the password is valid or not
   const [validPassword, setValidPassword] = useState<boolean>(false);
   //set focus on the input field or not
-  const [passwordFocus, setPassordFocus] = useState<boolean>(false);
+  const [passwordFocus, setPasswordFocus] = useState<boolean>(false);
 
   //password match input
   const [matchPassword, setMatchPassword] = useState("");
@@ -95,6 +95,33 @@ const Register = () => {
           Must begin with a letter.
           <br />
           Letter, numbers, underscores, hyphens allowed.
+        </p>
+
+        <label htmlFor="password">Password: </label>
+        <input
+          type="password"
+          //should match "htmlFor" property from "label"
+          id="password"
+          ref={userRef}
+          required
+          //tells screen reader whether the value needs adjustment before the form is submitted
+          aria-invalid={validPassword ? "false" : "true"}
+          aria-describedby="pwdnote"
+          onChange={(e) => setUser(e.target.value)}
+          onFocus={() => setPasswordFocus(true)}
+          onBlur={() => setPasswordFocus(false)}
+        />
+        <p
+          id="pwdnote"
+          className={
+            passwordFocus && !validPassword ? "instructions" : "offscreen"
+          }>
+          <InfoIcon />
+          8 to 24 characters.
+          <br />
+          Must include uppercase and lowercase letters, a number and a special character.
+          <br />
+          Allowed special characters: @#$%
         </p>
       </form>
     </section>
