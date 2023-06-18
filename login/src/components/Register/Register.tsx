@@ -32,7 +32,7 @@ const Register = () => {
   //check whether the password is valid or not
   const [validMatchPassword, setValidMatchPassword] = useState<boolean>(false);
   //set focus on the input field or not
-  const [matchPasswordFocus, setMatchPassordFocus] = useState<boolean>(false);
+  const [matchPasswordFocus, setMatchPasswordFocus] = useState<boolean>(false);
 
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [successMessage, setSuccessMessage] = useState<string>("");
@@ -119,10 +119,47 @@ const Register = () => {
           <InfoIcon />
           8 to 24 characters.
           <br />
-          Must include uppercase and lowercase letters, a number and a special character.
+          Must include uppercase and lowercase letters, a number and a special
+          character.
           <br />
           Allowed special characters: @#$%
         </p>
+
+        <label htmlFor="confirm_password">Confirm password: </label>
+        <input
+          type="password"
+          //should match "htmlFor" property from "label"
+          id="confirm_password"
+          ref={userRef}
+          required
+          //tells screen reader whether the value needs adjustment before the form is submitted
+          aria-invalid={validMatchPassword ? "false" : "true"}
+          aria-describedby="confirmnote"
+          onChange={(e) => setUser(e.target.value)}
+          onFocus={() => setMatchPasswordFocus(true)}
+          onBlur={() => setMatchPasswordFocus(false)}
+        />
+        <p
+          id="confirmnote"
+          className={
+            matchPasswordFocus && !validMatchPassword
+              ? "instructions"
+              : "offscreen"
+          }>
+          <InfoIcon />
+          Must match the first password input field.
+        </p>
+        <button
+          disabled={
+            !validName || !validPassword || !validMatchPassword ? true : false
+          }>
+          Sign up
+        </button>
+        <p>Already registered?</p>
+        <br />
+        <span className="line">
+          <a href="#">Sign in</a>
+        </span>
       </form>
     </section>
   );
