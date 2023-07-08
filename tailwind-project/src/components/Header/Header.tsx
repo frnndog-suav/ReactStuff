@@ -1,13 +1,12 @@
-import { MoonIcon } from "@heroicons/react/20/solid";
 import { FC } from "react";
+import ToggleTheme from "../ToggleTheme/ToggleTheme";
 
 const Header: FC = () => {
   return (
     <div className="flex h-20 bg-gray-500 justify-between items-center px-20 sm:rounded-xl sm:m-5">
       <span className="text-gray-100">Ola usuário</span>
       <h1 className="text-gray-100 text-xl">Meu projeto exemplo</h1>
-      {/* <input type="checkbox" className="hidden sm:block" /> */}
-      <MoonIcon className="h-8 text-gray-100 hidden sm:block cursor-pointer" />
+      <ToggleTheme />
     </div>
   );
 };
