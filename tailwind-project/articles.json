@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Lorem ipsum dolor sit amet",
+    "text": "Consectetur adipiscing elit. Maecenas non ligula eu massa pharetra convallis. Mauris a orci tortor. Suspendisse potenti.",
+    "tags": ["Batata", "Rabanete"]
+  },
+  {
+    "title": "Praesent risus arcu",
+    "text": "Pellentesque pretium mattis sit amet, mollis venenatis dui. Pellentesque eu felis vitae dolor ultricies vehicula eget ut orci. Cras fermentum sapien in sagittis rhoncus.",
+    "tags": ["Abacaxi", "Banana"]
+  },
+  {
+    "title": "Sed sed lectus ultrices",
+    "text": "Accumsan nibh eu, condimentum mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris hendrerit urna est, sit amet sodales magna tristique ac.",
+    "tags": ["Batata", "Abacaxi"]
+  },
+  {
+    "title": "Curabitur arcu ligula, suscipit vel metus eget",
+    "text": "Posuere porttitor dui. Sed non bibendum augue. Suspendisse elementum molestie diam, et sodales enim fringilla eu. Donec fermentum mi lacus, quis pulvinar est iaculis vitae.",
+    "tags": ["Banana", "Rabanete"]
+  },
+  {
+    "title": "Vivamus diam magna, placerat et gravida ut",
+    "text": "sagittis vitae odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ultrices quis diam quis eleifend.",
+    "image": "/example.jpg",
+    "alt": "Phasellus iaculis vestibulum massa at sagittis",
+    "tags": ["Banana"]
+  }
+]
