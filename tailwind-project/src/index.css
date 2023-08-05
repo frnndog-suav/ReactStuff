@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
+
+@layer base {
+  h1 {
+    @apply py-2 text-cyan-500;
+  }
+}
+
 @tailwind utilities;
