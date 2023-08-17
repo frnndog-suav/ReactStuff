@@ -1,0 +1,277 @@
+{
+  "merch": [
+    {
+      "id": "e28aa986-000d-4b0e-ab24-56ecd6b587d4",
+      "merchName": "Cama",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eu felis porta gravida sed ut lectus.",
+      "category": 1,
+      "price": 1500
+    },
+    {
+      "id": "4e6243a2-4335-4b48-bc71-ad8d7b1db91f",
+      "merchName": "Celular Android",
+      "description": "Curabitur a rhoncus diam, at accumsan est. Aenean sit amet sagittis enim, iaculis fringilla ipsum. Cras pretium vestibulum tortor vitae tempor.",
+      "category": 2,
+      "price": 1900
+    },
+    {
+      "id": "de2ef27b-ccec-4e2d-9448-aa6f5273a0a4",
+      "merchName": "Vaso Romano",
+      "description": "Curabitur ut mollis nisi. Donec lacus nisl, placerat a pellentesque sit amet, consectetur vitae eros. Morbi volutpat neque et cursus volutpat. ",
+      "category": 3,
+      "price": 400
+    },
+    {
+      "id": "7794a600-69d2-4a3c-a71d-12ab08c04eb8",
+      "merchName": "Armário",
+      "description": "Vivamus et eros lectus. Integer vel augue nibh. Suspendisse vel purus euismod, placerat eros quis, euismod libero.",
+      "category": 1,
+      "price": 700
+    },
+    {
+      "id": "9ead36e0-6dd7-4178-8ecf-ff9a5915822d",
+      "merchName": "Monitor ASUS",
+      "description": "Aliquam sagittis scelerisque justo at finibus. Duis rutrum est a dui condimentum, quis auctor odio venenatis. Curabitur vehicula at risus in iaculis. ",
+      "category": 2,
+      "price": 3000
+    },
+    {
+      "id": "d4d8ce17-60e0-4f1b-8afd-19d80bec3097",
+      "merchName": "Mesa Sala de Jantar",
+      "description": "Nullam porttitor iaculis lacus, sit amet hendrerit dolor sollicitudin volutpat. Duis diam libero, laoreet vitae arcu ut, convallis efficitur tortor.",
+      "category": 1,
+      "price": 2000
+    },
+    {
+      "id": "2928a344-d504-49d5-ac7e-267b8056ec88",
+      "merchName": "Ventilador",
+      "description": "Aenean pulvinar diam ac sagittis ultrices. Praesent varius purus vel mollis luctus. Aenean condimentum justo ultrices tempus efficitur.",
+      "category": 3,
+      "price": 300
+    },
+    {
+      "id": "6126271b-8ee4-4da6-84d6-80650e4704f3",
+      "merchName": "Teclado RGB Gamer",
+      "description": "Nullam sapien nisl, condimentum congue velit et, molestie semper ante. Vivamus dictum pellentesque diam, non auctor augue placerat quis.",
+      "category": 2,
+      "price": 500
+    },
+    {
+      "id": "74c6d883-afde-46ec-b83e-9ad27f79a1d4",
+      "merchName": "Poltrona",
+      "description": "Donec ligula ex, molestie a sem nec, sagittis feugiat neque. Vestibulum condimentum lobortis sagittis. Sed a dui et justo fringilla tincidunt.",
+      "category": 1,
+      "price": 650
+    },
+    {
+      "id": "5b17c417-b86d-4932-9066-667438a08ec8",
+      "merchName": "Monitor de Audio Edifier",
+      "description": "In a ipsum sed est maximus pellentesque. Curabitur tincidunt orci eu mi molestie, in maximus velit finibus. Etiam hendrerit justo a mauris consequat ultricies.",
+      "category": 2,
+      "price": 1600
+    },
+    {
+      "id": "c4cfbdb4-8b72-428c-b078-23d834bd5596",
+      "merchName": "Difusor elétrico",
+      "description": "Etiam euismod, mauris ut fringilla vulputate, velit tellus rutrum dui, placerat pharetra ante felis volutpat felis. Maecenas magna dui.",
+      "category": 3,
+      "price": 300
+    },
+    {
+      "id": "da2f38fe-1671-4768-adb7-c7b64b6446eb",
+      "merchName": "Estante",
+      "description": "Pellentesque ligula dui, venenatis in viverra nec, eleifend at metus. Pellentesque scelerisque ullamcorper fringilla. Integer gravida felis urna, elementum commodo tortor luctus vitae.",
+      "category": 1,
+      "price": 200
+    },
+    {
+      "id": "00b33840-8ba9-44b9-98ea-3019c8cb4a84",
+      "merchName": "Carregador celular",
+      "description": "Sed rutrum arcu id elit gravida, nec aliquam nisi ullamcorper. In hac habitasse platea dictumst. Vestibulum vulputate erat et porttitor commodo. Ut aliquam interdum purus non ultrices.",
+      "category": 2,
+      "price": 150
+    },
+    {
+      "id": "83182627-ba84-491e-84fe-3b65509c0aee",
+      "merchName": "Cortina",
+      "description": "Vestibulum volutpat lacus tellus, sit amet tempor tortor tempor sit amet. In at fringilla massa. Phasellus et ipsum sit amet massa pellentesque commodo id ut ipsum.",
+      "category": 3,
+      "price": 80
+    },
+    {
+      "id": "16011d45-7e2b-428a-8c5f-22ee6b7dbcd1",
+      "merchName": "Sofa Cama",
+      "description": "Vivamus at vehicula dolor, facilisis sagittis ante. Aliquam tempus eleifend ex, vel auctor ligula maximus ac. Vivamus ut tortor magna. Pellentesque suscipit risus non pulvinar pharetra.",
+      "category": 1,
+      "price": 1400
+    },
+    {
+      "id": "77f96df4-be13-44ed-bdc3-2733f3d8bcf2",
+      "merchName": "Fone de Ouvido",
+      "description": "Suspendisse purus tortor, aliquam quis pulvinar ut, rutrum auctor dui. Integer iaculis arcu est, eget posuere mauris consectetur quis. Nunc suscipit ex id enim accumsan tempus. ",
+      "category": 2,
+      "price": 100
+    },
+    {
+      "id": "a65493ec-6650-4956-8fca-168b24023b5b",
+      "merchName": "Relógio de parede",
+      "description": "Sed quis pulvinar libero. Aliquam erat volutpat. Cras in magna non erat efficitur condimentum at eu nisi. Curabitur eget mi tempor, maximus ipsum in, porttitor arcu.",
+      "category": 3,
+      "price": 70
+    },
+    {
+      "id": "d7945e00-264d-4e05-9f79-3bfc90626155",
+      "merchName": "Sofa",
+      "description": "Sed non est velit. Ut et imperdiet lectus. Donec ligula justo, tincidunt id posuere vel, tincidunt at purus. Donec eget auctor mauris. In hac habitasse platea dictumst.",
+      "category": 1,
+      "price": 1800
+    },
+    {
+      "id": "dbcf1dbe-6af6-494d-85c1-d7d1a2a5f2ea",
+      "merchName": "Headset Turtle Beach",
+      "description": "Morbi nulla urna, eleifend in bibendum quis, dictum non ligula. Curabitur non libero et lacus mollis tempor. Donec eu tempus diam, eget tincidunt ligula. Cras non hendrerit nisl, nec posuere magna.",
+      "category": 2,
+      "price": 500
+    },
+    {
+      "id": "4cbafe45-d909-47ad-bcfb-f7f7a2b497cc",
+      "merchName": "Caneca",
+      "description": "Donec molestie est sem, a vehicula nisl scelerisque ac. Aenean a iaculis dolor. Ut non eleifend lectus.",
+      "category": 3,
+      "price": 30
+    },
+    {
+      "id": "b08238a9-15a1-4e4a-90cb-feef15fbfe1c",
+      "merchName": "Banquinho",
+      "description": "Sed blandit, nisi efficitur vulputate bibendum, libero ligula suscipit nunc, quis viverra sapien neque eu justo.",
+      "category": 1,
+      "price": 90
+    },
+    {
+      "id": "d578afaf-6b69-4675-983d-1a0600fb1a61",
+      "merchName": "Aspirador de pó inteligente",
+      "description": "Suspendisse augue nibh, bibendum vel fermentum non, lacinia pretium est. Aliquam ut sapien vitae eros egestas iaculis sit amet ac ante. Suspendisse potenti.",
+      "category": 2,
+      "price": 4000
+    },
+    {
+      "id": "8144efc3-1184-40e1-a927-5f2260996d67",
+      "merchName": "Cabide",
+      "description": "Praesent fringilla elit vitae tortor tempus, ut posuere arcu dignissim. Mauris ultricies ut justo vitae gravida. Nunc tincidunt pellentesque sapien.",
+      "category": 3,
+      "price": 20
+    },
+    {
+      "id": "77b455a1-fa18-4759-9db1-1865f639f76b",
+      "merchName": "Mesa",
+      "description": "Pellentesque in vestibulum libero. Maecenas vulputate tristique convallis. Nunc vulputate suscipit velit, sed varius mauris eleifend eu.",
+      "category": 1,
+      "price": 400
+    },
+    {
+      "id": "b261fa97-bf27-4ea9-b5ab-45ae00023f3c",
+      "merchName": "Fone bluetooth",
+      "description": "Phasellus rutrum consectetur lobortis. Donec vitae lectus et mauris ornare egestas sed laoreet sem. Praesent eleifend, dolor in sodales facilisis, eros sapien accumsan neque, vel faucibus libero odio ut nulla.",
+      "category": 2,
+      "price": 300
+    },
+    {
+      "id": "cf38404b-b4e9-4310-8d65-d2ca90d7994b",
+      "merchName": "Tapete",
+      "description": "Aliquam et sapien augue. Nulla enim massa, ultricies ac turpis ut, rutrum ultrices dolor. Curabitur id elementum lacus. Integer tristique ex sit amet tincidunt posuere.",
+      "category": 3,
+      "price": 240
+    },
+    {
+      "id": "5dc00b84-aacf-423e-a504-d6068a83df5d",
+      "merchName": "Abajur",
+      "description": "Aliquam gravida nisi lacus, eget eleifend neque blandit in. Nullam fringilla nibh ac lectus dignissim mollis.",
+      "category": 1,
+      "price": 75
+    },
+    {
+      "id": "d350ccc6-a569-4fda-a979-f6c64bfecbc9",
+      "merchName": "Camêra",
+      "description": "Nam vitae neque ut tellus gravida tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla tellus metus, fringilla vel pulvinar eget, malesuada a magna.",
+      "category": 2,
+      "price": 890
+    },
+    {
+      "id": "ecda8a60-0f3f-46a9-9bca-6b199397b958",
+      "merchName": "Quadro decorativo 1",
+      "description": "Integer sagittis, erat quis pretium vestibulum, ex mauris tincidunt tellus, at convallis tortor dui in libero. Nullam lobortis lectus a imperdiet imperdiet. Praesent euismod sapien quis dapibus aliquam.",
+      "category": 3,
+      "price": 130
+    },
+    {
+      "id": "96be1794-e15b-47a0-b370-82d7ddef7fb3",
+      "merchName": "Lustre",
+      "description": "Duis tempor vulputate est sed euismod. Suspendisse potenti. Maecenas efficitur nulla justo, at porttitor nulla venenatis id.",
+      "category": 1,
+      "price": 135
+    },
+    {
+      "id": "03431f53-e8a0-4fa9-876a-296856e27c8d",
+      "merchName": "Luz decorativa RGB",
+      "description": "Cras et rutrum est, vel egestas libero. Maecenas viverra nibh vitae leo luctus dignissim. Quisque imperdiet vitae ipsum at blandit.",
+      "category": 2,
+      "price": 67
+    },
+    {
+      "id": "4a0a1123-7c50-414f-857b-e0be3617b50c",
+      "merchName": "Quadro decorativo 2",
+      "description": "Aliquam gravida nec nisl viverra venenatis. Aliquam dignissim venenatis nulla, nec pretium felis bibendum accumsan.",
+      "category": 3,
+      "price": 146
+    },
+    {
+      "id": "f0bd5455-b84e-4bf1-b2c8-3d33f93065e5",
+      "merchName": "Escrivaninha",
+      "description": "Aliquam a velit erat. Proin pulvinar eros dignissim nunc finibus venenatis. Morbi mauris ex, pulvinar vehicula finibus a, ornare sit amet mauris. Proin auctor nibh felis, eu ultrices diam malesuada ac.",
+      "category": 1,
+      "price": 334
+    },
+    {
+      "id": "baa1112a-b15c-4b70-ad7b-9a566c008e9b",
+      "merchName": "Ar condicionado portátil",
+      "description": "Phasellus convallis magna diam, non ornare dolor tincidunt id. Duis mollis, neque eu rutrum euismod, lectus orci maximus tellus, vehicula rhoncus ipsum arcu non risus.",
+      "category": 2,
+      "price": 896
+    },
+    {
+      "id": "cacb88be-5e2a-4089-8c26-170d96591193",
+      "merchName": "Quadro decorativo 3",
+      "description": "Violão",
+      "category": 3,
+      "price": 572
+    },
+    {
+      "id": "cc71b5cc-361c-4bab-a46a-c93f429e1e61",
+      "merchName": "Mesa de escritório",
+      "description": "Praesent eu purus eget felis tincidunt auctor pharetra scelerisque elit. Pellentesque vitae sagittis risus. Pellentesque eget commodo est. Integer aliquam nec orci vitae tristique.",
+      "category": 1,
+      "price": 479
+    },
+    {
+      "id": "37ee1238-d3a6-4302-a9ce-fa14b2d9ef70",
+      "merchName": "Celular Apple",
+      "description": "Vestibulum eget faucibus risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi ultricies sagittis arcu, ut aliquam ante scelerisque vitae.",
+      "category": 2,
+      "price": 10108
+    },
+    {
+      "id": "6de70467-61a2-4c74-b269-20ac205bd7ce",
+      "merchName": "Adaptador tomada",
+      "description": "Morbi at mauris malesuada, finibus felis a, aliquam metus. Mauris malesuada, mauris at porttitor interdum, dolor ante fringilla erat, eu ultricies arcu ex nec dui.",
+      "category": 3,
+      "price": 21
+    },
+    {
+      "id": "ffac97ad-8e64-4d81-9b31-3562a4d684b2",
+      "merchName": "Almofada",
+      "description": "Suspendisse commodo sit amet urna id scelerisque. Ut bibendum ut turpis vel tempor. Aliquam in felis quam. Vivamus sit amet sem a ipsum pharetra pulvinar sit amet eu ante.",
+      "category": 1,
+      "price": 18
+    }
+  ]
+}

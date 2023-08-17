@@ -1,4 +1,4 @@
-import { PaymentMethod } from "../../../constants/enums";
+import { PaymentMethod } from "../../../domain2/purchase/constants/enums";
 
 export const formatPaymentMethod = (paymentMethod: PaymentMethod): string => {
   switch (paymentMethod) {
