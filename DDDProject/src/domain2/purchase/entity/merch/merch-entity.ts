@@ -1,6 +1,6 @@
-import { MerchCategory } from "../../constants/enums";
 import { formatNumberToCurrency } from "../../../../utils/currency/formatNumberToCurrency/formatNumberToCurrency";
 import { formatMerchCategory } from "../../../../utils/enum/formatMerchCategory/formatMerchCategory";
+import { MerchCategory } from "../../constants/enums";
 import { MerchACLType } from "../../types/merch/merch-acl";
 import { MerchEntityType } from "../../types/merch/merch-entity";
 
@@ -14,7 +14,7 @@ export class MerchEntity {
 
     if (
       !category ||
-      typeof category !== "object" ||
+      typeof category !== "number" ||
       category === MerchCategory.Unknown
     ) {
       return false;
@@ -35,7 +35,9 @@ export class MerchEntity {
     return true;
   }
 
-  static createMerchEntity(merchEntity: MerchEntityType): MerchACLType | undefined {
+  static createMerchEntity(
+    merchEntity: MerchEntityType
+  ): MerchACLType | undefined {
     if (!this.isMerchEntityValid(merchEntity)) {
       return;
     }

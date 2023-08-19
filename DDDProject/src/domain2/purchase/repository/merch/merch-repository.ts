@@ -1,4 +1,5 @@
-import { HttpClient } from "../../infra/httpClient";
+import { HttpClient } from "../../../infra/httpClient";
+import { MerchEntityType } from "../../types/merch/merch-entity";
 import { RepositoryInterface } from "../repository-interface";
 
 export class MerchRepository implements RepositoryInterface {
@@ -30,7 +31,8 @@ export class MerchRepository implements RepositoryInterface {
 
   async list() {
     try {
-      return await this.httpClient.get("");
+      const response = await this.httpClient.get<MerchEntityType[]>("/merch");
+      return response;
     } catch (error) {
       throw new Error("Error in listing all merchs");
     }
