@@ -21,16 +21,32 @@ function App() {
   return (
     <div
       className="
-    h-full 
-    w-full 
-    flex 
-    flex-col"
+      h-full 
+      w-full 
+      flex 
+      flex-col"
     >
       <Header />
       <Body>
-        <div className="p-5 flex gap-5 flex-wrap">
+        <div
+          className="
+            p-5 
+            gap-5 
+            grid 
+            sm:grid-cols-1 
+            md:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-4"
+        >
           {data.map((merch) => (
-            <div key={`listing-merch-${merch.id}`} className="border-2 border-slate-100">{merch.merchName}</div>
+            <div
+              key={`listing-merch-${merch.id}`}
+              className="border-2 border-[#241023] rounded-md p-3"
+            >
+              {merch.merchName}
+              <hr className="border-1 my-4 border-[#241023]" />
+              <img alt="" src="" />
+            </div>
           ))}
         </div>
       </Body>

@@ -8,7 +8,7 @@ const Body: FC<BodyProps> = ({ children }) => {
   return (
     <div
       className="
-    bg-[#E0E2DB] 
+    bg-[#EADEDA] 
     flex 
     flex-col 
     h-[90vh]"

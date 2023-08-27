@@ -9,7 +9,7 @@ const Header = () => {
       justify-center
       py-5 
       px-10
-      bg-[#8B2635] 
+      bg-[#6B0504] 
      text-white 
       font-bold 
       text-3xl">
