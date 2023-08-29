@@ -20,4 +20,15 @@ export class MerchSubDomain {
 
     return this.removeUndefinedValues(merchsACL);
   }
+
+  static convertACLToEntity(merch: MerchACLType): MerchEntityType {
+    return {
+      id: merch.id,
+      category: merch.category,
+      description: merch.description,
+      merchName: merch.merchName,
+      price: merch.price,
+    };
+  }
+
 }

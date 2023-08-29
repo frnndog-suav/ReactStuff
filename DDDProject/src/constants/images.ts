@@ -1,5 +1,3 @@
-export const ASSETS_PATH = "/src/assets/merchs";
-
 interface MerchImageDictionary {
   [key: string]: string;
 }

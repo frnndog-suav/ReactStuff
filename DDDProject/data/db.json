@@ -65,7 +65,7 @@
     },
     {
       "id": "5b17c417-b86d-4932-9066-667438a08ec8",
-      "merchName": "Monitor de Audio Edifier",
+      "merchName": "Monitor de Audio",
       "description": "In a ipsum sed est maximus pellentesque. Curabitur tincidunt orci eu mi molestie, in maximus velit finibus. Etiam hendrerit justo a mauris consequat ultricies.",
       "category": 2,
       "price": 1600
@@ -149,7 +149,7 @@
     },
     {
       "id": "d578afaf-6b69-4675-983d-1a0600fb1a61",
-      "merchName": "Aspirador de pó inteligente",
+      "merchName": "Aspirador de pó",
       "description": "Suspendisse augue nibh, bibendum vel fermentum non, lacinia pretium est. Aliquam ut sapien vitae eros egestas iaculis sit amet ac ante. Suspendisse potenti.",
       "category": 2,
       "price": 4000
@@ -233,7 +233,7 @@
     },
     {
       "id": "baa1112a-b15c-4b70-ad7b-9a566c008e9b",
-      "merchName": "Ar condicionado portátil",
+      "merchName": "Ar condicionado",
       "description": "Phasellus convallis magna diam, non ornare dolor tincidunt id. Duis mollis, neque eu rutrum euismod, lectus orci maximus tellus, vehicula rhoncus ipsum arcu non risus.",
       "category": 2,
       "price": 896

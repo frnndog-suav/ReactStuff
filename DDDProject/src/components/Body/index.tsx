@@ -15,6 +15,7 @@ const Body: FC<BodyProps> = ({ children }) => {
     >
       <div
         className="
+        p-5 
         max-h-screen 
         overflow-y-auto"
       >

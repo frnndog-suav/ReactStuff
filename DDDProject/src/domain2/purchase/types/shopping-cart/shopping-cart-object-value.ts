@@ -1,6 +1,6 @@
-import { ShoppingCartItemEntityType } from "../shopping-cart-item/shopping-cart-item-entity";
+import { ShoppingCartItemObjectValueType } from "../shopping-cart-item/shopping-cart-item-object-value";
 
 export type ShoppingCartObjectValueType = {
-  items: ShoppingCartItemEntityType[];
+  items: ShoppingCartItemObjectValueType[];
   totalPrice: number;
 };
