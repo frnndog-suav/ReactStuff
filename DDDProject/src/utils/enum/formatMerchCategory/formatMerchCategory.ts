@@ -7,7 +7,7 @@ export const formatMerchCategory = (merchCategory: number): string => {
     case MerchCategory.Technology:
       return "Tecnologia";
     case MerchCategory.Object:
-      return "Object";
+      return "Objeto";
     default:
       return "Desconhecido";
   }
