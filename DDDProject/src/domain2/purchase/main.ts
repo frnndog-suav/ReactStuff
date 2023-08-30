@@ -14,17 +14,21 @@ export class Purchase {
     };
   }
 
+  //QUESTION (pq armazenar a listagem no main ao invés de devolve-la?)
   async listAllMerchs() {
     const merchs = await this.merchRepository.list();
-    if (merchs) {
-      this.merchs = MerchSubDomain.merchsFormatter(merchs);
-    }
+    this.merchs = MerchSubDomain.formatMerchListing(merchs);
+  }
+
+  async getMerch(id: string) {
+    const merch = await this.merchRepository.get(id);
+    return MerchSubDomain.merchFormatter(merch);
   }
 
   addMerchToShoppingCart(
     merch: MerchACLType,
     amount = 1
-  ): ShoppingCartItemObjectValueType {    
+  ): ShoppingCartItemObjectValueType {
     return {
       amount,
       merch: MerchSubDomain.convertACLToEntity(merch),

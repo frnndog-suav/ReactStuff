@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { MERCH_IMAGES } from "../../constants/images";
 import { MerchACLType } from "../../domain2/purchase/types/merch/merch-acl";
+import Button from "../Button";
 
 interface ShowcaseProps {
   merch: MerchACLType;
@@ -31,7 +32,7 @@ const ShowcaseTemplate: FC<ShowcaseProps> = ({
       <img
         alt={merch.description}
         src={`/src/assets/merchs/${MERCH_IMAGES[merch.id]}`}
-        className="xl:w-56 xl:h-56 hover:cursor-pointer"
+        className="w-56 h-56 hover:cursor-pointer"
         loading="lazy"
         onClick={() => handleViewDetails(merch)}
       />
@@ -42,26 +43,13 @@ const ShowcaseTemplate: FC<ShowcaseProps> = ({
         <p className="font-semibold text-md">{merch.formattedCategory}</p>
       </div>
       <div className="mt-3">
-        <button
-          className="
-            border-2 
-            rounded-md 
-            px-3 
-            w-full
-            border-[#336699]
-            bg-[#336699]            
-            hover:bg-[#29527A]
-            active:bg-[#1F3D5C]            
-            text-white
-            disabled:bg-slate-300
-            disabled:text-slate-400          
-            disabled:border-slate-300            
-            "
+        <Button
+          layoutType="blue"
           onClick={() => handleAddToCart(merch)}
           disabled={isLoading}
         >
           {"Adicionar ao carrinho"}
-        </button>
+        </Button>
       </div>
     </div>
   </div>

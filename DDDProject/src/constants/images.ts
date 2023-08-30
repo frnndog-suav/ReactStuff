@@ -3,6 +3,7 @@ interface MerchImageDictionary {
 }
 
 export const MERCH_IMAGES: MerchImageDictionary = {
+  "": "unknown.svg",
   "e28aa986-000d-4b0e-ab24-56ecd6b587d4": "Brown-bed.svg",
   "4e6243a2-4335-4b48-bc71-ad8d7b1db91f": "android-phone.svg",
   "de2ef27b-ccec-4e2d-9448-aa6f5273a0a4": "roman-vase.svg",

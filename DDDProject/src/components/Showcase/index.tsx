@@ -8,6 +8,7 @@ import ShowcaseTemplate from "./template";
 
 interface ShowcaseProps {
   merch: MerchACLType;
+  isLoading: boolean;
 }
 
 const Showcase: FC<ShowcaseProps> = ({ merch }) => {

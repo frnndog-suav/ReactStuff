@@ -13,14 +13,7 @@ const Body: FC<BodyProps> = ({ children }) => {
     flex-col 
     h-[90vh]"
     >
-      <div
-        className="
-        p-5 
-        max-h-screen 
-        overflow-y-auto"
-      >
-        {children}
-      </div>
+      {children}
     </div>
   );
 };

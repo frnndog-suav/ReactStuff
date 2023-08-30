@@ -9,7 +9,7 @@ export class MerchRepository implements RepositoryInterface {
     try {
       await this.httpClient.post("", merch);
     } catch (error) {
-      throw new Error("Error in creating new merch");
+      throw new Error("Error in creating new merch.");
     }
   }
 
@@ -17,7 +17,7 @@ export class MerchRepository implements RepositoryInterface {
     try {
       await this.httpClient.put("", merch);
     } catch (error) {
-      throw new Error("Error in updating a merch");
+      throw new Error("Error in updating a merch.");
     }
   }
 
@@ -25,7 +25,7 @@ export class MerchRepository implements RepositoryInterface {
     try {
       await this.httpClient.delete(`${id}`);
     } catch (error) {
-      throw new Error("Error in deleting a merch");
+      throw new Error("Error in deleting a merch.");
     }
   }
 
@@ -34,7 +34,18 @@ export class MerchRepository implements RepositoryInterface {
       const response = await this.httpClient.get<MerchEntityType[]>("/merch");
       return response;
     } catch (error) {
-      throw new Error("Error in listing all merchs");
+      throw new Error("Error in listing all merchs.");
+    }
+  }
+
+  async get(id: string) {
+    try {
+      const response = await this.httpClient.get<MerchEntityType>(
+        `/merch/${id}`
+      );
+      return response;
+    } catch (error) {
+      throw new Error(`Error in retrieving merch with id ${id}.`);
     }
   }
 }

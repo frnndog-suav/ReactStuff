@@ -9,7 +9,7 @@ const ShoppingCartIcon = () => {
         rounded-full 
         ${items.length > 0 && "hover:cursor-pointer"}
         relative
-        bg-white `}
+        bg-white`}
     >
       <img
         alt="Carrinho de compras"

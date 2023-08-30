@@ -12,13 +12,17 @@ export class MerchSubDomain {
     }, [] as MerchACLType[]);
   }
 
-  static merchsFormatter(merchs: MerchEntityType[]) {
+  static formatMerchListing(merchs: MerchEntityType[]) {
     const merchsACL = merchs.map((merch) => {
-      const merchACL = MerchEntity.createMerchEntity(merch);
-      return merchACL;
+      return this.merchFormatter(merch);
     });
 
     return this.removeUndefinedValues(merchsACL);
+  }
+
+  static merchFormatter(merch: MerchEntityType) {
+    const merchACL = MerchEntity.createMerchEntity(merch);
+    return merchACL;
   }
 
   static convertACLToEntity(merch: MerchACLType): MerchEntityType {
@@ -30,5 +34,4 @@ export class MerchSubDomain {
       price: merch.price,
     };
   }
-
 }

@@ -3,4 +3,5 @@ export interface RepositoryInterface {
   update: <T>(entity: T) => Promise<void>;
   delete: (id: string) => Promise<void>;
   list: () => Promise<unknown>;
+  get: (id: string) => Promise<unknown>;
 }

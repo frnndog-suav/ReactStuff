@@ -5,17 +5,20 @@ import HomePageTemplate from "./template";
 
 const HomePage = () => {
   const [merchs, setMerchs] = useState<MerchACLType[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const retrieveMerchs = useCallback(async () => {
+    setIsLoading(true);
     await purchaseDomainInstance.listAllMerchs();
     setMerchs(purchaseDomainInstance.getData.merchs);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
     retrieveMerchs();
   }, [retrieveMerchs]);
 
-  return <HomePageTemplate merchs={merchs} />;
+  return <HomePageTemplate merchs={merchs} isLoading={isLoading} />;
 };
 
 export default HomePage;
