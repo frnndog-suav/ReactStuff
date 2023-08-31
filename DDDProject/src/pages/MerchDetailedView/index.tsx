@@ -6,11 +6,15 @@ import MerchDetailInfoContainer from "../../components/MerchDetailInfoContainer"
 import MerchDetailName from "../../components/MerchDetailName";
 import { purchaseDomainInstance } from "../../constants/domain";
 import { MerchACLType } from "../../domain2/purchase/types/merch/merch-acl";
+import toast from "react-hot-toast";
+import { useShoppingCartItemStore } from "../../store/useShoppingCartItemsStore";
 
 const MerchDetailedViewPage = () => {
+  const { addItem } = useShoppingCartItemStore();
   const { id } = useParams();
   //QUESTION (objetos ACL serão os objetos de consulta principal da aplicação?)
   const [merch, setMerch] = useState<MerchACLType | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getMerch = useCallback(async () => {
     if (id) {
@@ -23,61 +27,86 @@ const MerchDetailedViewPage = () => {
     getMerch();
   }, [getMerch]);
 
+  const handleAddToCart = (selectedMerch?: MerchACLType) => {
+    if (!selectedMerch) return;
+    setIsLoading(true);
+    const shoppingCarItem =
+      purchaseDomainInstance.addMerchToShoppingCart(selectedMerch);
+    toast.success(`${selectedMerch.merchName} foi adicionado(a) ao carrinho!`);
+    addItem(shoppingCarItem);
+    setIsLoading(false);
+  };
+
+  const handleBuyProduct = () => {};
+
   return (
     <div
       className="
         p-5 
         max-h-screen 
-        overflow-y-auto"
+        overflow-y-auto     
+        lg:h-full     
+        "
     >
-      <div className="flex flex-col">
-        <MerchDetailName merchName={merch?.merchName} />
-        <MerchDetailImage merch={merch} />
-        <br />
-        <MerchDetailInfoContainer label="Preço" value={merch?.formattedPrice} />
-        <MerchDetailInfoContainer
-          label="Categoria"
-          value={merch?.formattedCategory}
-        />
-        <MerchDetailInfoContainer
-          label="Descrição"
-          value={merch?.description}
-        />
-        <Button layoutType="blue">{"Comprar produto"}</Button>
-        <br />
-        <Button layoutType="green">{"Adicionar ao carrinho"}</Button>
+      <MerchDetailName merchName={merch?.merchName} />
+      <div
+        className="
+          flex      
+          flex-col    
+          lg:flex-row 
+          lg:gap-4    
+          lg:h-[73vh]      
+          "
+      >
+        <div
+          className="
+          lg:flex 
+          lg:flex-col
+          lg:justify-center
+          lg:w-1/2
+        "
+        >
+          <MerchDetailImage merch={merch} />
+        </div>
+        <div
+          className="
+          lg:flex 
+          lg:flex-col          
+          lg:w-1/2
+          lg:h-full
+          lg:justify-between
+        "
+        >
+          <div className="mt-3">
+            <MerchDetailInfoContainer
+              label="Preço"
+              value={merch?.formattedPrice}
+            />
+            <MerchDetailInfoContainer
+              label="Categoria"
+              value={merch?.formattedCategory}
+            />
+            <MerchDetailInfoContainer
+              label="Descrição"
+              value={merch?.description}
+            />
+          </div>
+          <div
+            className="
+            flex 
+            flex-col 
+            gap-3"
+          >
+            <Button layoutType="blue" onClick={handleBuyProduct} disabled={isLoading}>
+              {"Comprar produto"}
+            </Button>
+            <Button layoutType="green" onClick={() => handleAddToCart(merch)} disabled={isLoading}>
+              {"Adicionar ao carrinho"}
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
-
-    // <div className="flex h-full w-full gap-4 p-5">
-    //   <div
-    //     className="
-    //     flex
-    //     flex-col
-    //     justify-center
-    //     rounded-md
-    //     p-3
-    //     w-1/2
-    //     border-2
-    //     border-[#241023]
-    //     bg-[#F1E7E4]
-    //     "
-    //   >
-    // <MerchDetailImage />
-    //   </div>
-    //   <div className="flex flex-col w-1/2 p-3">
-    //     <MerchDetailName merchName={merch?.merchName} />
-    //     <MerchDetailInfoContainer label="Preço" value={merch?.formattedPrice} />
-    //     <MerchDetailInfoContainer
-    //       label="Categoria"
-    //       value={merch?.formattedCategory}
-    //     />
-    //     <MerchDetailInfoContainer
-    //       label="Descrição"
-    //       value={merch?.description}
-    //     />
-    //   </div>
-    // </div>
   );
 };
 

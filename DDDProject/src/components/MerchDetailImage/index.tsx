@@ -17,19 +17,21 @@ const MerchDetailImage: FC<MerchDetailImageProps> = ({ merch }) => {
         rounded-md 
         border-2 
         p-3
+        h-[300px]
+        lg:h-full
         border-[#241023] 
-        bg-[#F1E7E4]                 
+        bg-[#F8F3F2]                         
         "
     >
       {merch ? (
         <img
           alt={merch.description}
           src={`/src/assets/merchs/${MERCH_IMAGES[merch.id]}`}
-          className="h-[300px]"
+          className="h-[300px] object-contain"
           loading="lazy"
         />
       ) : (
-        <Skeleton variant="rectangular" height={"300px"} />
+        <Skeleton variant="rounded" height={"100%"} />
       )}
     </div>
   );

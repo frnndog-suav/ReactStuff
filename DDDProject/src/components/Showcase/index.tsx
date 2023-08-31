@@ -7,8 +7,7 @@ import { useShoppingCartItemStore } from "../../store/useShoppingCartItemsStore"
 import ShowcaseTemplate from "./template";
 
 interface ShowcaseProps {
-  merch: MerchACLType;
-  isLoading: boolean;
+  merch: MerchACLType;  
 }
 
 const Showcase: FC<ShowcaseProps> = ({ merch }) => {

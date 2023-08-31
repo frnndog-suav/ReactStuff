@@ -3,11 +3,16 @@ import { useShoppingCartItemStore } from "../../store/useShoppingCartItemsStore"
 const ShoppingCartIcon = () => {
   const { items } = useShoppingCartItemStore();
 
+  const shoppingCartItemsCount = items.reduce(
+    (sum, current) => current.amount + sum,
+    0
+  );
+
   return (
     <div
       className={`
         rounded-full 
-        ${items.length > 0 && "hover:cursor-pointer"}
+        ${shoppingCartItemsCount > 0 && "hover:cursor-pointer"}
         relative
         bg-white`}
     >
@@ -17,7 +22,7 @@ const ShoppingCartIcon = () => {
         className="p-2 w-12"
         loading="eager"
       />
-      {items.length > 0 && (
+      {shoppingCartItemsCount > 0 && (
         <div
           className="
             absolute 
@@ -36,7 +41,7 @@ const ShoppingCartIcon = () => {
             justify-center
           bg-[#E65F5C]"
         >
-          {items.length}
+          {shoppingCartItemsCount}
         </div>
       )}
     </div>

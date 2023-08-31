@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Showcase from "../../components/Showcase";
+import ShowcaseSkeleton from "../../components/ShowcaseSkeleton";
 import { MerchACLType } from "../../domain2/purchase/types/merch/merch-acl";
 
 interface HomePageTemplateProps {
@@ -25,13 +26,13 @@ const HomePageTemplate: FC<HomePageTemplateProps> = ({ merchs, isLoading }) => (
         2xl:grid-cols-5
       "
     >
-      {merchs.map((merch) => (
-        <Showcase
-          key={`listing-merch-${merch.id}`}
-          merch={merch}
-          isLoading={isLoading}
-        />
-      ))}
+      {isLoading ? (
+        <ShowcaseSkeleton />
+      ) : (
+        merchs.map((merch) => (
+          <Showcase key={`listing-merch-${merch.id}`} merch={merch} />
+        ))
+      )}
     </div>
   </div>
 );
