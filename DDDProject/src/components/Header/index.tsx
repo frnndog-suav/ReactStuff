@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { ROUTE } from "../../routes/paths";
 import { useShoppingCartItemStore } from "../../store/useShoppingCartItemsStore";
 import { formatNumberToCurrency } from "../../utils/currency/formatNumberToCurrency/formatNumberToCurrency";
-import ShoppingCartIcon from "../ShoppingCartIcon";
+import MenuButton from "../MenuButton";
+import ShoppingCartButton from "../ShoppingCartButton";
 
 const Header = () => {
   const { items } = useShoppingCartItemStore();
@@ -22,21 +24,24 @@ const Header = () => {
       bg-[#6B0504] 
       "
     >
-      <Link to="/">
-        <p
-          className="          
+      <div className="flex gap-3 items-center">
+        <MenuButton />
+        <Link to={ROUTE["Home"]}>
+          <p
+            className="          
           font-bold     
           text-xl
           sm:text-3xl
           hover:cursor-pointer
           text-white 
           "
-        >
-          {"Muamba Online"}
-        </p>
-      </Link>
+          >
+            {"Muamba Online"}
+          </p>
+        </Link>
+      </div>
       <div className="flex items-center">
-        <div className="flex flex-col">
+        <div className="hidden sm:flex flex-col">
           <h3 className="text-white font-normal text-sm sm:text-md">
             {"Valor total do carrinho"}
           </h3>
@@ -45,7 +50,7 @@ const Header = () => {
             {shoppingCartTotalValue}
           </h1>
         </div>
-        <ShoppingCartIcon />
+        <ShoppingCartButton />
       </div>
     </div>
   );

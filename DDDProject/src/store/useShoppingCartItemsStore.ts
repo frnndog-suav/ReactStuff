@@ -31,7 +31,7 @@ export const useShoppingCartItemStore = create<ShoppingCartItemStore>(
           const updatedItem: ShoppingCartItemObjectValueType = {
             amount: cartItem.amount + 1,
             merch: cartItem.merch,
-            totalPrice: cartItem.totalPrice + cartItem.totalPrice,
+            totalPrice: cartItem.totalPrice + cartItem.merch.price,
           };
 
           return { items: [...remainingItems, updatedItem] };

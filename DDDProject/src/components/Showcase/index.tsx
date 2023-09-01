@@ -3,11 +3,12 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { purchaseDomainInstance } from "../../constants/domain";
 import { MerchACLType } from "../../domain2/purchase/types/merch/merch-acl";
+import { ROUTE } from "../../routes/paths";
 import { useShoppingCartItemStore } from "../../store/useShoppingCartItemsStore";
 import ShowcaseTemplate from "./template";
 
 interface ShowcaseProps {
-  merch: MerchACLType;  
+  merch: MerchACLType;
 }
 
 const Showcase: FC<ShowcaseProps> = ({ merch }) => {
@@ -25,7 +26,7 @@ const Showcase: FC<ShowcaseProps> = ({ merch }) => {
   };
 
   const handleViewDetails = (merch: MerchACLType) => {
-    navigate(`/merch/${merch.id}`);
+    navigate(ROUTE["Merch"].replace(":id", merch.id));
   };
 
   return (

@@ -1,6 +1,6 @@
 import { useShoppingCartItemStore } from "../../store/useShoppingCartItemsStore";
 
-const ShoppingCartIcon = () => {
+const ShoppingCartButton = () => {
   const { items } = useShoppingCartItemStore();
 
   const shoppingCartItemsCount = items.reduce(
@@ -48,4 +48,4 @@ const ShoppingCartIcon = () => {
   );
 };
 
-export default ShoppingCartIcon;
+export default ShoppingCartButton;

@@ -1,6 +1,7 @@
 import Skeleton from "@mui/material/Skeleton/Skeleton";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { ROUTE } from "../../routes/paths";
 
 interface MerchDetailNameProps {
   merchName?: string;
@@ -11,9 +12,9 @@ const MerchDetailName: FC<MerchDetailNameProps> = ({ merchName }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-between">
-        <h2 className="font-semibold text-3xl">
-          {merchName ?? <Skeleton variant="text" />}
+      <div className="flex gap-3">
+        <h2 className="font-semibold text-3xl w-full">
+          {merchName ?? <Skeleton variant="text" className="w-full md:w-[70%]" />}
         </h2>
         <div
           className={`
@@ -23,7 +24,7 @@ const MerchDetailName: FC<MerchDetailNameProps> = ({ merchName }) => {
             hover:bg-opacity-5
             hover:bg-black
         `}
-          onClick={() => navigate("/")}
+          onClick={() => navigate(ROUTE["Home"])}
         >
           <img
             alt="Carrinho de compras"
