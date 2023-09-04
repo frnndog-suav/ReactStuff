@@ -6,6 +6,7 @@ import {
   Montserrat_400Regular,
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
+import Texto from "./src/components/Texto";
 
 export default function App() {
   const [loadedFont] = useFonts({
@@ -14,7 +15,7 @@ export default function App() {
   });
 
   if (!loadedFont) {
-    return <View />;
+    return <View>Carregando</View>;
   }
 
   return (
