@@ -2,6 +2,7 @@ import React from "react";
 import { Dimensions, Image, StyleSheet } from "react-native";
 import topoImagePath from "../../../assets/topo.png";
 import Texto from "../Texto";
+import cesta from '../../mocks'
 
 const width = Dimensions.get("screen").width;
 
@@ -26,7 +27,7 @@ const Topo = () => {
   return (
     <React.Fragment>
       <Image style={estilos.topo} source={topoImagePath} />
-      <Texto style={estilos.titulo}>Detalhe da cesta</Texto>
+      <Texto style={estilos.titulo}>{cesta.topo.titulo}</Texto>
     </React.Fragment>
   );
 };

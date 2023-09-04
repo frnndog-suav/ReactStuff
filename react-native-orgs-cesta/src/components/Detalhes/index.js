@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import farmLogo from "../../../assets/logo.png";
+import cesta from "../../mocks";
 import Texto from "../Texto";
 
 const estilos = StyleSheet.create({
@@ -37,17 +37,16 @@ const estilos = StyleSheet.create({
 const Detalhes = () => {
   return (
     <React.Fragment>
-      <Texto style={estilos.nome}>Cesta de verduras</Texto>
+      <Texto style={estilos.nome}>{cesta.detalhes.nome}</Texto>
       <View style={estilos.fazenda}>
-        <Image style={estilos.imgFazenda} source={farmLogo} />
-        <Texto style={estilos.nomeFazenda}>Jenny and Jack farms</Texto>
+        <Image style={estilos.imgFazenda} source={cesta.detalhes.logoFazenda} />
+        <Texto style={estilos.nomeFazenda}>
+          {cesta.detalhes.nomeDaFazenda}
+        </Texto>
       </View>
 
-      <Texto style={estilos.descricao}>
-        Uma cesta com produtos selecionados cuidadosamente da fazenda para sua
-        cozinha
-      </Texto>
-      <Text style={estilos.preco}>R$ 40,00</Text>
+      <Texto style={estilos.descricao}>{cesta.detalhes.descricao}</Texto>
+      <Text style={estilos.preco}>{cesta.detalhes.preco}</Text>
     </React.Fragment>
   );
 };
