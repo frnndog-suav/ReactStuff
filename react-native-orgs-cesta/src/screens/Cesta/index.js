@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import Detalhes from "../../components/Detalhes";
 import Topo from "../../components/Topo";
+import Itens from "../../components/Itens";
 
 const estilos = StyleSheet.create({
   cesta: {
@@ -12,12 +13,13 @@ const estilos = StyleSheet.create({
 
 const Cesta = () => {
   return (
-    <React.Fragment>
+    <ScrollView>
       <Topo />
       <View style={estilos.cesta}>
         <Detalhes />
+        <Itens />
       </View>
-    </React.Fragment>
+    </ScrollView>
   );
 };
 
