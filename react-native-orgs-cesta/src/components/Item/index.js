@@ -1,6 +1,5 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
-import cesta from "../../mocks/index";
 import Texto from "../Texto";
 
 const estilos = StyleSheet.create({
@@ -17,6 +16,7 @@ const estilos = StyleSheet.create({
     alignItems: "center",
     gap: 16,
     paddingVertical: 16,
+    marginHorizontal: 16,
     borderBottomWidth: 1,
     borderBottomColor: "#ececec",
   },
@@ -27,22 +27,17 @@ const estilos = StyleSheet.create({
   nome: {
     fontSize: 16,
     lineHeight: 26,
-    color: '#464646'
+    color: "#464646",
   },
 });
 
-const Itens = () => {
+const Item = ({ item: { nome, imagem } }) => {  
   return (
-    <React.Fragment>
-      <Texto style={estilos.titulo}>{cesta.itens.titulo}</Texto>
-      {cesta.itens.lista.map((item, index) => (
-        <View key={index} style={estilos.item}>
-          <Image source={item.imagem} style={estilos.imagem} />
-          <Texto style={estilos.nome}>{item.nome}</Texto>
-        </View>
-      ))}
-    </React.Fragment>
+    <View style={estilos.item}>
+      <Image source={imagem} style={estilos.imagem} />
+      <Texto style={estilos.nome}>{nome}</Texto>
+    </View>
   );
 };
 
-export default Itens;
+export default Item;
