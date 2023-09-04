@@ -1,12 +1,11 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, View } from "react-native";
-import Cesta from "./src/screens/Cesta/index";
 import {
-  useFonts,
   Montserrat_400Regular,
   Montserrat_700Bold,
+  useFonts,
 } from "@expo-google-fonts/montserrat";
-import Texto from "./src/components/Texto";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, Text, View } from "react-native";
+import Cesta from "./src/screens/Cesta/index";
 
 export default function App() {
   const [loadedFont] = useFonts({
@@ -15,7 +14,11 @@ export default function App() {
   });
 
   if (!loadedFont) {
-    return <View>Carregando</View>;
+    return (
+      <View>
+        <Text>{'Carregando...'}</Text>
+      </View>
+    );
   }
 
   return (

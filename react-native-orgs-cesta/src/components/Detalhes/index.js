@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import cesta from "../../mocks";
 import Texto from "../Texto";
 
@@ -32,6 +32,19 @@ const estilos = StyleSheet.create({
     fontSize: 26,
     marginTop: 8,
   },
+  botao: {
+    marginTop: 16,
+    backgroundColor: "#2a9f85",
+    paddingVertical: 16,
+    borderRadius: 6,
+  },
+  textoBotao: {
+    textAlign: "center",
+    color: "white",
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: "bold",
+  },
 });
 
 const Detalhes = () => {
@@ -46,7 +59,11 @@ const Detalhes = () => {
       </View>
 
       <Texto style={estilos.descricao}>{cesta.detalhes.descricao}</Texto>
-      <Text style={estilos.preco}>{cesta.detalhes.preco}</Text>
+      <Texto style={estilos.preco}>{cesta.detalhes.preco}</Texto>
+      {/* <Button title="Comprar" /> */}
+      <TouchableOpacity style={estilos.botao}>
+        <Texto style={estilos.textoBotao}>{"Comprar"}</Texto>
+      </TouchableOpacity>
     </React.Fragment>
   );
 };

@@ -1,9 +1,9 @@
 import farmLogo from "../../assets/logo.png";
 import tomate from "../../assets/frutas/Tomate.png";
-import abobora from "../../assets/frutas/Abóbora.png.png";
-import batata from "../../assets/frutas/Batata.png.png";
-import brocolis from "../../assets/frutas/Brócolis.png.png";
-import pepino from "../../assets/frutas/Pepino.png.png";
+import abobora from "../../assets/frutas/Abóbora.png";
+import batata from "../../assets/frutas/Batata.png";
+import brocolis from "../../assets/frutas/Brócolis.png";
+import pepino from "../../assets/frutas/Pepino.png";
 
 const cesta = {
   topo: {
