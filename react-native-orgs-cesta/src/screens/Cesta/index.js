@@ -23,7 +23,7 @@ const estilos = StyleSheet.create({
   nome: {
     color: "#464646",
     fontSize: 26,
-    fontWeight: "bold",
+    fontFamily: "MontserratBold",
   },
   cesta: {
     paddingVertical: 8,
@@ -32,6 +32,7 @@ const estilos = StyleSheet.create({
   nomeFazenda: {
     fontSize: 16,
     marginLeft: 12,
+    fontFamily: "MontserratRegular",
   },
   descricao: {
     color: "#A3a3a3",
@@ -50,7 +51,7 @@ const estilos = StyleSheet.create({
   fazenda: {
     flexDirection: "row",
     paddingVertical: 12,
-    alignItems: 'center'
+    alignItems: "center",
   },
 });
 
