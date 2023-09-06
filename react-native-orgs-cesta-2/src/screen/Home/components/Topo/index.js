@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import logoImage from "../../../../../assets/logo.png";
+import { carregaTopo } from "../../../../services/loadData";
 
 const estilos = StyleSheet.create({
   topo: {
@@ -23,12 +24,14 @@ const estilos = StyleSheet.create({
   },
 });
 
+const textos = carregaTopo();
+
 const Topo = () => {
   return (
     <View style={estilos.topo}>
       <Image style={estilos.imagem} source={logoImage} />
-      <Text style={estilos.boasVindas}>Olá Pessoa</Text>
-      <Text style={estilos.subtitle}>Encontre os melhores produtores</Text>
+      <Text style={estilos.boasVindas}>{textos.boasVindas}</Text>
+      <Text style={estilos.subtitle}>{textos.legenda}</Text>
     </View>
   );
 };
