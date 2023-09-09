@@ -1,4 +1,6 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Stars from "../../../../components/Stars";
+import { useState } from "react";
 
 const estilos = StyleSheet.create({
   cartao: {
@@ -48,14 +50,25 @@ const estilos = StyleSheet.create({
 });
 
 const ProdutorCard = ({ nome, imagem, distancia, estrelas }) => {
+  const [selecionado, setSelecionado] = useState(false);
+
   return (
-    <View style={estilos.cartao}>
+    <TouchableOpacity
+      style={estilos.cartao}
+      onPress={() => setSelecionado((previousValue) => !previousValue)}>
       <Image source={imagem} accessibilityLabel={nome} style={estilos.imagem} />
       <View style={estilos.info}>
-        <Text style={estilos.nome}>{nome}</Text>
+        <View>
+          <Text style={estilos.nome}>{nome}</Text>
+          <Stars
+            quantidade={estrelas}
+            editavel={selecionado}
+            grande={selecionado}
+          />
+        </View>
         <Text style={estilos.distancia}>{distancia}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
