@@ -1,6 +1,6 @@
+import { useReducer } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Stars from "../../../../components/Stars";
-import { useState } from "react";
 
 const estilos = StyleSheet.create({
   cartao: {
@@ -50,12 +50,13 @@ const estilos = StyleSheet.create({
 });
 
 const ProdutorCard = ({ nome, imagem, distancia, estrelas }) => {
-  const [selecionado, setSelecionado] = useState(false);
+  const [selecionado, inverterSelecionado] = useReducer(
+    (selecionado) => !selecionado,
+    false
+  );
 
   return (
-    <TouchableOpacity
-      style={estilos.cartao}
-      onPress={() => setSelecionado((previousValue) => !previousValue)}>
+    <TouchableOpacity style={estilos.cartao} onPress={inverterSelecionado}>
       <Image source={imagem} accessibilityLabel={nome} style={estilos.imagem} />
       <View style={estilos.info}>
         <View>
