@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FlatList, StyleSheet, Text } from "react-native";
-import { carregaProdutores } from "../../../../services/loadData";
+import useProdutores from "../../../../hooks/useProdutores";
 import ProdutorCard from "../ProdutorCard";
 
 const estilos = StyleSheet.create({
@@ -15,14 +15,7 @@ const estilos = StyleSheet.create({
 });
 
 const Produtores = ({ topo: Topo }) => {
-  const [titulo, setTitulo] = useState("");
-  const [lista, setLista] = useState([]);
-
-  useEffect(() => {
-    const response = carregaProdutores();
-    setTitulo(response.titulo);
-    setLista(response.lista);
-  }, []);
+  const [titulo, lista] = useProdutores();
 
   const Header = () => {
     return (
