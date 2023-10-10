@@ -1,6 +1,9 @@
 import { FlatList, SafeAreaView, StatusBar } from "react-native";
 import Item from "./src/screens/Servicos/Item";
 
+import 'intl'
+import 'intl/locale-data/jsonp/pt-BR'
+
 export type ServicoType = {
   id: number;
   nome: string;
