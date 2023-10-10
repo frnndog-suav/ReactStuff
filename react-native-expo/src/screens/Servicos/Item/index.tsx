@@ -1,11 +1,12 @@
 import React, { FC, useState } from "react";
-import { Button, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { ServicoType } from "../../../../App";
+import Botao from "../../../componentes/Botao";
 import CampoInteiro from "../../../componentes/CampoInteiro";
 import estilos from "./estilos";
 
 const Item: FC<ServicoType> = ({ descricao, nome, preco }) => {
-  const [quantidade, setQuantidade] = useState('1');
+  const [quantidade, setQuantidade] = useState("1");
 
   const handleQuantidade = (value: string) => setQuantidade(value);
 
@@ -21,6 +22,7 @@ const Item: FC<ServicoType> = ({ descricao, nome, preco }) => {
           <View style={estilos.valor}>
             <Text style={estilos.descricao}>Quantidade:</Text>
             <CampoInteiro
+              estilos={estilos.quantidade}
               valor={quantidade}
               handleQuantidade={handleQuantidade}
             />
@@ -30,7 +32,7 @@ const Item: FC<ServicoType> = ({ descricao, nome, preco }) => {
             <Text style={estilos.preco}>0</Text>
           </View>
         </View>
-        <Button title="Adicionar" />
+        <Botao acao={() => {}} valor={"Adicionar"} />
       </View>
       <View style={estilos.divisor} />
     </>
