@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaView, StyleSheet } from "react-native";
 import HomePage from "./src/screen/Home";
 
@@ -9,8 +10,10 @@ const estilos = StyleSheet.create({
 
 export default function App() {
   return (
-    <SafeAreaView style={estilos.screen}>
-      <HomePage />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={estilos.screen}>
+        <HomePage />
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }

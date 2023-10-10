@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, StyleSheet, Text } from "react-native";
 import useProdutores from "../../../../hooks/useProdutores";
 import ProdutorCard from "../ProdutorCard";
+import Topo from "../Topo";
 
 const estilos = StyleSheet.create({
   titulo: {
@@ -14,7 +15,7 @@ const estilos = StyleSheet.create({
   },
 });
 
-const Produtores = ({ topo: Topo }) => {
+const Produtores = () => {
   const [titulo, lista] = useProdutores();
 
   const Header = () => {
