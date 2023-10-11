@@ -33,13 +33,13 @@ const servicos: ServicoType[] = [
 
 const Servicos = () => {
   return (
-    <TelaPadrao>
+    <>
       <FlatList
         data={servicos}
         keyExtractor={(servico) => String(servico.id)}
         renderItem={({ item }) => <Item {...item} />}
       />
-    </TelaPadrao>
+    </>
   );
 };
 

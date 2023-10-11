@@ -43,14 +43,14 @@ const Carrinho = () => {
   );
 
   return (
-    <TelaPadrao>
+    <>
       <StatusCarrinho total={total} />
       <FlatList
         data={servicos}
         keyExtractor={(servico) => String(servico.id)}
         renderItem={({ item }) => <Item {...item} />}
       />
-    </TelaPadrao>
+    </>
   );
 };
 
