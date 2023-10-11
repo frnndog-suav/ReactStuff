@@ -5,7 +5,8 @@ import {
   SafeAreaView,
   StatusBar,
 } from "react-native";
-import estilos from "../../estilos";
+import estiloGlobal, { cores } from "../../estilos";
+import estilos from "./estilos";
 
 interface TelaPadraoProps {
   children: React.ReactNode;
@@ -13,14 +14,17 @@ interface TelaPadraoProps {
 
 const TelaPadrao: FC<TelaPadraoProps> = ({ children }) => {
   return (
-    <SafeAreaView style={estilos.preencher}>
-      <StatusBar />
-      <KeyboardAvoidingView
-        style={estilos.preencher}
-        behavior={Platform.OS === "ios" ? "padding" : "height"}>
-        {children}
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={estilos.ajusteTela}>
+        <StatusBar backgroundColor={cores.roxo} />
+        <KeyboardAvoidingView
+          style={estiloGlobal.preencher}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}>
+          {children}
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+      <SafeAreaView style={estilos.ajusteTelaBaixo} />
+    </>
   );
 };
 
