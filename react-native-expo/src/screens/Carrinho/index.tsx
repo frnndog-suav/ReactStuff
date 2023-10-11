@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList } from "react-native";
+import StatusCarrinho from "../../componentes/StatusCarrinho";
 import TelaPadrao from "../../componentes/TelaPadrao";
 import Item from "./Item";
 
@@ -36,8 +37,14 @@ const servicos: ServicoCarrinhoType[] = [
 ];
 
 const Carrinho = () => {
+  const total = servicos.reduce(
+    (previousValue, current) => previousValue + current.preco,
+    0
+  );
+
   return (
     <TelaPadrao>
+      <StatusCarrinho total={total} />
       <FlatList
         data={servicos}
         keyExtractor={(servico) => String(servico.id)}
