@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { ServicoType } from "../../../../App";
+import { ServicoType } from "..";
 import Botao from "../../../componentes/Botao";
 import CampoInteiro from "../../../componentes/CampoInteiro";
 import estilos from "./estilos";
@@ -57,7 +57,7 @@ const Item: FC<ServicoType> = ({ descricao, nome, preco }) => {
               </Text>
             </View>
           </View>
-          <Botao acao={() => {}} valor={"Adicionar"} />
+          <Botao acao={() => {}} valor={"Adicionar ao carrinho"} />
         </View>
       )}
       <View style={estilos.divisor} />
