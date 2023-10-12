@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import api from "../../servicos/api";
 import estilos from "./estilos";
 
 interface PrincipalProps {
@@ -16,6 +17,15 @@ interface PrincipalProps {
 export default function Principal({ navigation }: PrincipalProps) {
   const [nomeUsuario, setNomeUsuario] = useState("");
   const [usuario, setUsuario] = useState({});
+
+  const busca = () => {
+    api
+      .get("/users")
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <ScrollView>
@@ -53,7 +63,7 @@ export default function Principal({ navigation }: PrincipalProps) {
           style={estilos.entrada}
         />
 
-        <TouchableOpacity style={estilos.botao}>
+        <TouchableOpacity style={estilos.botao} onPress={busca}>
           <Text style={estilos.textoBotao}>Buscar</Text>
         </TouchableOpacity>
       </View>
