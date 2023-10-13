@@ -5,6 +5,7 @@ import {
   buscaRepositoriosDoUsuario,
 } from "../../servicos/requisicoes/repositorios";
 import estilos from "./estilos";
+import { useIsFocused } from "@react-navigation/native";
 
 interface RepositoriosProps {
   route: any;
@@ -13,19 +14,19 @@ interface RepositoriosProps {
 
 export default function Repositorios({ route, navigation }: RepositoriosProps) {
   const [repo, setRepo] = useState<Repositorio[]>([]);
+  const estaNaTela = useIsFocused();
 
   useEffect(() => {
     const test = async () => await buscaRepositoriosDoUsuario(route.params.id);
     test()
       .then((response) => {
-        console.log(response);
         setRepo(response);
       })
       .catch(() => {
         Alert.alert("Repositórios não encontrado");
         setRepo([]);
       });
-  }, []);
+  }, [estaNaTela]);
 
   return (
     <View style={estilos.container}>

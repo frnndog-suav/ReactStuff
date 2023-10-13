@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { salvarRepositoriosDoUsuario } from "../../servicos/requisicoes/repositorios";
 import estilos from "./estilos";
 
 interface InfoRepositorioProps {
@@ -11,8 +12,24 @@ export default function InfoRepositorio({
   route,
   navigation,
 }: InfoRepositorioProps) {
-  const [nome, setNome] = useState("");
-  const [data, setData] = useState("");
+  const [nome, setNome] = useState(route.params.item.name);
+  const [data, setData] = useState(route.params.item.data);
+
+  async function salvar() {
+    const resultado = await salvarRepositoriosDoUsuario({
+      data: data,
+      id: route.params.item.id,
+      name: nome,
+      postId: route.params.item.postId,
+    });
+
+    if (resultado === "Sucesso") {
+      Alert.alert("Repositório atualizado!");
+      navigation.goBack();
+    } else {
+      Alert.alert("Erro ao atualizar repositório!");
+    }
+  }
 
   return (
     <View style={estilos.container}>
@@ -20,13 +37,17 @@ export default function InfoRepositorio({
         placeholder="Nome do repositório"
         autoCapitalize="none"
         style={estilos.entrada}
+        value={nome}
+        onChangeText={setNome}
       />
       <TextInput
         placeholder="Data de criação"
         autoCapitalize="none"
         style={estilos.entrada}
+        value={data}
+        onChangeText={setData}
       />
-      <TouchableOpacity style={estilos.botao}>
+      <TouchableOpacity style={estilos.botao} onPress={salvar}>
         <Text style={estilos.textoBotao}>Salvar</Text>
       </TouchableOpacity>
       <TouchableOpacity

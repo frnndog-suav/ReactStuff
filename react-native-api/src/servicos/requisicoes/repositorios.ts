@@ -16,3 +16,13 @@ export async function buscaRepositoriosDoUsuario(id: number) {
     return [];
   }
 }
+
+export async function salvarRepositoriosDoUsuario(repo: Repositorio) {
+  try {
+    await api.put(`/repos/${repo.id}`, repo);
+    return "Sucesso";
+  } catch (error) {
+    console.log(error);
+    return "Erro";
+  }
+}
