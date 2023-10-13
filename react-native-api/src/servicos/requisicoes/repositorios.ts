@@ -26,3 +26,20 @@ export async function salvarRepositoriosDoUsuario(repo: Repositorio) {
     return "Erro";
   }
 }
+export async function criarRepositoriosDoUsuario(
+  data: string,
+  name: string,
+  postId: number
+) {
+  try {
+    await api.post(`/repos/`, {
+      name: name,
+      data: data,
+      postId: postId,
+    });
+    return "Sucesso";
+  } catch (error) {
+    console.log(error);
+    return "Erro";
+  }
+}
