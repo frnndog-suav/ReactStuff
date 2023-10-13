@@ -61,7 +61,9 @@ export default function Principal({ navigation }: PrincipalProps) {
               </View>
             </View>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Repositorios")}>
+              onPress={() =>
+                navigation.navigate("Repositorios", { id: usuario.id })
+              }>
               <Text style={estilos.repositorios}>Ver os repositórios</Text>
             </TouchableOpacity>
           </>
