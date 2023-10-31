@@ -1,4 +1,3 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -16,23 +15,12 @@ export default function NotaEditor({ mostraNotas }) {
   const [modalVisivel, setModalVisivel] = useState(false);
 
   async function salvaNota() {
-    const novoId = await geraId();
     const umaNota = {
-      id: novoId.toString(),
+      id: "",
       texto,
     };
 
-    await AsyncStorage.setItem(umaNota.id, umaNota.texto);
     mostraNotas();
-  }
-
-  async function geraId() {
-    const todasChaves = await AsyncStorage.getAllKeys();
-    if (todasChaves.length <= 0) {
-      return 1;
-    }
-
-    return todasChaves.length + 1;
   }
 
   return (
