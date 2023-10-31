@@ -8,7 +8,7 @@ export default function App() {
   const [notas, setNotas] = useState([]);
 
   async function mostraNotas() {
-    setNotas(todasNotas);
+    setNotas(notas);
   }
 
   useEffect(() => {
