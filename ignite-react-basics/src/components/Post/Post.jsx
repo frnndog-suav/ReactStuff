@@ -1,7 +1,6 @@
 import styles from "./Post.module.css";
 
-// eslint-disable-next-line react/prop-types
-export function Post({ author, content }) {
+export function Post() {
   return (
     <article className={styles.post}>
       <header>
@@ -26,11 +25,19 @@ export function Post({ author, content }) {
         <p>In eu ante vel nisl varius tempor. In sed congue orci.</p>
         <p>Nulla facilisis nibh a vestibulum scelerisque.</p>
         <p>
-          <a href="#">#teste</a> 
+          <a href="#">#teste</a>
           <a href="#">#projectoBase</a>
-          <a href="#">#rockeseat</a>           
+          <a href="#">#rockeseat</a>
         </p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixe seu feedback</strong>
+        <textarea placeholder="Deixe um comentário" />
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
     </article>
   );
 }
