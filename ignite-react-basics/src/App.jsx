@@ -17,6 +17,18 @@ export function App() {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ex dui, ullamcorper at ullamcorper nec, commodo pharetra ipsum."
             }
           />
+          <Post
+            author={"Teste"}
+            content={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ex dui, ullamcorper at ullamcorper nec, commodo pharetra ipsum."
+            }
+          />
+          <Post
+            author={"Rocketseat"}
+            content={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ex dui, ullamcorper at ullamcorper nec, commodo pharetra ipsum."
+            }
+          />
         </main>
       </div>
     </div>

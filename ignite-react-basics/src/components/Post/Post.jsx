@@ -26,7 +26,9 @@ export function Post({ author, content }) {
         <p>In eu ante vel nisl varius tempor. In sed congue orci.</p>
         <p>Nulla facilisis nibh a vestibulum scelerisque.</p>
         <p>
-          <a href="#">#teste #projectoBase #rockeseat</a>
+          <a href="#">#teste</a> 
+          <a href="#">#projectoBase</a>
+          <a href="#">#rockeseat</a>           
         </p>
       </div>
     </article>
