@@ -6,15 +6,8 @@ import { Avatar } from "../Avatar/Avatar";
 import { Comment } from "../Comment/Comment";
 import styles from "./Post.module.css";
 
-const defaultComments = [
-  {
-    id: 1,
-    content: "Post dahora!",
-  },
-];
-
 export function Post({ id, content, author, publishedAt }) {
-  const [comments, setComments] = useState(defaultComments);
+  const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
 
   const formattedPublishedAt = format(publishedAt, "d 'de' LLLL 'às' HH'h'mm", {
@@ -39,6 +32,12 @@ export function Post({ id, content, author, publishedAt }) {
 
   function handleNewComment() {
     setNewComment(event.target.value);
+  }
+
+  function deleteComment(id) {
+    setComments((previousComments) =>
+      previousComments.filter((comment) => comment.id !== id)
+    );
   }
 
   return (
@@ -88,7 +87,11 @@ export function Post({ id, content, author, publishedAt }) {
       </form>
       <div className={styles.commentList}>
         {comments.map((comment) => (
-          <Comment key={`comment-${comment.id}`} {...comment} />
+          <Comment
+            key={`comment-${comment.id}`}
+            {...comment}
+            onDeleteComment={deleteComment}
+          />
         ))}
       </div>
     </article>
