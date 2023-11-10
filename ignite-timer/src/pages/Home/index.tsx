@@ -9,9 +9,21 @@ import {
   StartCountdownButton,
   TaskInput,
 } from "./styles";
+import * as zod from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const formSchema = zod.object({
+  task: zod.string().min(1, "Informe a tarefa"),
+  minutesAmount: zod
+    .number()
+    .min(5, "Valor mínimo de 5 minutos")
+    .max(60, "Valor máximo de 60 minutos"),
+});
 
 export function Home() {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, watch, formState } = useForm({
+    resolver: zodResolver(formSchema),
+  });
 
   const taskInputValue = watch("task");
   const isSubmitDisabled = !taskInputValue;
