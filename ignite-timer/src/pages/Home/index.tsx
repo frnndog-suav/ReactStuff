@@ -20,15 +20,21 @@ const formSchema = zod.object({
     .max(60, "Valor máximo de 60 minutos"),
 });
 
+type NewCycleFormData = zod.infer<typeof formSchema>;
+
 export function Home() {
-  const { register, handleSubmit, watch, formState } = useForm({
+  const { register, handleSubmit, watch } = useForm<NewCycleFormData>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      task: "",
+      minutesAmount: 0,
+    },
   });
 
   const taskInputValue = watch("task");
   const isSubmitDisabled = !taskInputValue;
 
-  function handleTimerForm(data: any) {
+  function handleTimerForm(data: NewCycleFormData) {
     console.log("data", data);
   }
 
