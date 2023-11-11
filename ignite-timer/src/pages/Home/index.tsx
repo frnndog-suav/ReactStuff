@@ -133,7 +133,7 @@ export function Home() {
   return (
     <HomeContainer>
       <form onSubmit={handleSubmit(handleTimerForm)}>
-        <FormContainer>
+        {/* <FormContainer>
           <label htmlFor="task">{"Vou trabalhar em"}</label>
           <TaskInput
             id="task"
@@ -162,15 +162,19 @@ export function Home() {
           />
 
           <span>{"minutos."}</span>
-        </FormContainer>
+        </FormContainer> */}
 
-        <CountdownContainer>
+        <NewCycleForm />
+
+        {/* <CountdownContainer>
           <span>{minutes[0]}</span>
           <span>{minutes[1]}</span>
           <Separator>:</Separator>
           <span>{seconds[0]}</span>
           <span>{seconds[1]}</span>
-        </CountdownContainer>
+        </CountdownContainer> */}
+
+        <Countdown />
 
         {activeCycle ? (
           <StopCountdownButton onClick={handleInterruptCycle} type="button">
