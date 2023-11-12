@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
 import { styled } from "styled-components";
 
 export const HistoryContainer = styled.main`
