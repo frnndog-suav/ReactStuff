@@ -15,6 +15,22 @@
       "category": "Alimento",
       "price": 1000,
       "createdAt": "2023-12-24T12:40:33.800Z"
+    },
+    {
+      "category": "Jogos",
+      "description": "Sleeve Dragon Shield",
+      "price": 69,
+      "type": "outcome",
+      "createdAt": "2023-12-24T14:36:41.304Z",
+      "id": 3
+    },
+    {
+      "category": "Jogos",
+      "description": "Sleeve Dragon shield petrol",
+      "price": 72,
+      "type": "outcome",
+      "createdAt": "2023-12-24T14:48:33.194Z",
+      "id": 4
     }
   ]
 }
