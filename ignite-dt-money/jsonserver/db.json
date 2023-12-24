@@ -5,7 +5,7 @@
       "description": "Organização de planilha",
       "type": "income",
       "category": "Venda",
-      "price": "14000",
+      "price": 14000,
       "createdAt": "2023-12-24T12:40:33.800Z"
     },
     {
@@ -13,7 +13,7 @@
       "description": "Hamburguer",
       "type": "outcome",
       "category": "Alimento",
-      "price": "1000",
+      "price": 1000,
       "createdAt": "2023-12-24T12:40:33.800Z"
     }
   ]
