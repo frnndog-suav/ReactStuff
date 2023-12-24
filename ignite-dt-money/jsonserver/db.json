@@ -2,7 +2,7 @@
   "transactions": [
     {
       "id": 1,
-      "description": "Desenvolvimento de site",
+      "description": "Organização de planilha",
       "type": "income",
       "category": "Venda",
       "price": "14000",
