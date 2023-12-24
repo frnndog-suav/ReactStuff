@@ -12,13 +12,16 @@
     "db:watch": "json-server jsonserver/db.json -p 3333 -w -d 1200"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-radio-group": "^1.1.3",
     "@types/styled-components": "^5.1.32",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.1.1"
+    "react-hook-form": "^7.49.2",
+    "styled-components": "^6.1.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
