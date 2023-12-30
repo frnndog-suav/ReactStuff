@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../services/axios";
+import { createContext } from "use-context-selector";
 
 interface CreateTransactionData {
   category: string;
