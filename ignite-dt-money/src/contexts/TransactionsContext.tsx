@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { api } from "../services/axios";
+import { useCallback, useEffect, useState } from "react";
 import { createContext } from "use-context-selector";
+import { api } from "../services/axios";
 
 interface CreateTransactionData {
   category: string;
@@ -33,7 +33,7 @@ interface TransactionsProviderProps {
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  async function fetchTransactions(query?: string) {
+  const fetchTransactions = useCallback(async (query?: string) => {
     const response = await api.get("transactions", {
       params: {
         q: query,
@@ -43,9 +43,9 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     });
 
     setTransactions(response.data);
-  }
+  }, []);
 
-  async function createTransaction(data: CreateTransactionData) {
+  const createTransaction = useCallback(async (data: CreateTransactionData) => {
     const { category, description, price, type } = data;
 
     const response = await api.post("transactions", {
@@ -60,10 +60,11 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       response.data,
       ...currentTransactions,
     ]);
-  }
+  }, []);
 
   useEffect(() => {
     fetchTransactions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
