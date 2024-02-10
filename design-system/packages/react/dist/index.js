@@ -1,2 +1,1 @@
-// src/index.ts
-console.log("hello ds");
+"use strict";

@@ -11,9 +11,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@goia-ui/tokens": "*",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@goia-ui/ts-config": "*"
   }
 }
