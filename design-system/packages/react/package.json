@@ -1,5 +1,5 @@
 {
-  "name": "@goia-ui/tokens",
+  "name": "@goia-ui/react",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tsup": "^8.0.2",
+    "@goia-ui/tokens": "*",
     "typescript": "^5.3.3"
   }
 }
