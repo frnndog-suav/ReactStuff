@@ -1,0 +1,3 @@
+{
+    "extends": "@goia-ui/eslint-config"
+}
