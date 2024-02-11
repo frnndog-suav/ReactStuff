@@ -1,0 +1,8 @@
+{
+    "extends": "@goia-ui/ts-config/react.json",
+    "include": [
+        "./pages",
+        "./stories",
+        "./components"
+    ]
+}
